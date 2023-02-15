@@ -1,5 +1,13 @@
-header {
+.header {
+  grid-area: header;
+
     height: 55px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    grid-template-columns: 300px, 1fr;
+    column-gap: 20px;
+}
+
+.appTitle {
+    display: flex;
+    grid-template-columns: 60px, 200px;
 }

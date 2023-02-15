@@ -1,4 +1,4 @@
-/* color pallet
+/* Accent color pallet
 #3a5a40
 #a3b18a
 #dad7cd
@@ -12,11 +12,10 @@
   background-color: #1e1e1e;
 
   font-family: Gotham Circular, sans-serif;
-}
 
-/* .App {
-  text-align: center;
-} */
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
 
 .App-header {
   background-color: #282c34;
@@ -31,20 +30,17 @@
 
 .App {
   display: grid;
-  grid-template-rows: 50px, 1fr, 50px;
-  grid-template-columns: 100px, 1fr;
-  grid-template-areas: 
-  "header header"
-  "aside  main" 
-  "aside footer ";
+  height: 100vh;
 
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-}
 
-header {
-  grid-area: header;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 65px, 1fr, 50px;
+  /* grid-template-columns: 100px, 1fr; */
+
+  grid-template-areas:
+    "header header"
+    "aside  main"
+    "footer footer ";
 }
 
 .PlaceLeft {
@@ -57,4 +53,10 @@ main {
 
 footer {
   grid-area: footer;
+}
+
+button {
+  font-size: 1.3rem;
+  padding: 3px;
+  border-radius: 3px;
 }

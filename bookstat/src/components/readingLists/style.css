@@ -1,0 +1,12 @@
+.readingListP {
+    color: white
+}
+
+.bookCard {
+    width: 90px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-rows: 100px, 20px, 20px;
+    border: solid pink 2px;
+    place-items: center;
+}
