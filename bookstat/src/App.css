@@ -14,9 +14,9 @@
   font-family: Gotham Circular, sans-serif;
 }
 
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-header {
   background-color: #282c34;
@@ -45,22 +45,14 @@
 
 header {
   grid-area: header;
-  display: grid;
-
-  grid-template-columns: 56px, 160px, 1fr;
-
-  
 }
 
 .PlaceLeft {
   grid-area: aside;
-  display: grid;
 }
 
 main {
   grid-area: main;
-  display: grid;
-
 }
 
 footer {

@@ -1,0 +1,12 @@
+nav {
+    display: grid;
+    row-gap: 80px;
+    justify-items: start;
+    font-size: 1.2rem
+}
+
+
+nav > ul> li {
+    list-style: none;
+    line-height: 60px;
+}

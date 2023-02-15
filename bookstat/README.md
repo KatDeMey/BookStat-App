@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Intro to BookStat
 
 This project was created as a nod to my love of reading and tracking books. The design has been inspired by an existing app: StoryGraph which allows users to search for books, add them to various reading lists, and to share their reviews. 
 

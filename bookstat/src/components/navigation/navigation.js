@@ -1,3 +1,5 @@
+import style from "./style.css"
+
 const Navigation = () => {
     return (
 
