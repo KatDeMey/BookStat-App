@@ -1,0 +1,19 @@
+{
+    "books": [
+      {
+        "id": 0,
+        "title": "The Beautiful Ones",
+        "authorFirstName": "Silvia",
+        "authorLastName": "Moreno-Garcia",
+        "cover": "",
+        "ISBN": "",
+        "numPages": "292",
+        "series": [
+            {"isSeries":false,
+            "orderInSeries": 0,
+            "seriesComplete": false} ],
+        "reading": false,
+        "tbr": false
+      }
+    ]
+  }

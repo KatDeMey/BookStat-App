@@ -1,16 +1,21 @@
+/* color pallet
+#3a5a40
+#a3b18a
+#dad7cd
+*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  color: whitesmoke;
+  background-color: #1e1e1e;
+
+  font-family: Gotham Circular, sans-serif;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -24,15 +29,40 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  display: grid;
+  grid-template-rows: 50px, 1fr, 50px;
+  grid-template-columns: 100px, 1fr;
+  grid-template-areas: 
+  "header header"
+  "aside  main" 
+  "aside footer ";
+
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header {
+  grid-area: header;
+  display: grid;
+
+  grid-template-columns: 56px, 160px, 1fr;
+
+  
+}
+
+.PlaceLeft {
+  grid-area: aside;
+  display: grid;
+}
+
+main {
+  grid-area: main;
+  display: grid;
+
+}
+
+footer {
+  grid-area: footer;
 }
