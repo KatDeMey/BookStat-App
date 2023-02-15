@@ -17,3 +17,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+1. npm ci
+2. npm install?
+3. npm start
+4. Start json-server. In a new terminal: `npx json-server -p 4000 database/db.json`
+5. Visit localhost:4000/books to make sure your json-server is running

@@ -2,11 +2,23 @@
     color: white
 }
 
-.bookCard {
-    width: 90px;
-    display: grid;
-    grid-gap: 5px;
-    grid-template-rows: 100px, 20px, 20px;
-    border: solid pink 2px;
-    place-items: center;
+.book-card-img {
+    padding-top: 10px;
+    width: 170px;
+    height: 194.5px;
+    border-radius: 4px;
 }
+
+.bookCard {
+    border: solid pink 2px;
+
+    display: grid;
+    background-color: #2a2a2a50;
+    place-items: center;
+    border-radius: 6px;
+    grid-template-rows: 195px 30px 44px;
+
+    padding: 0px;
+    margin: 0px;
+}
+
