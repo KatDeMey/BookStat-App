@@ -1,21 +1,16 @@
-// import { useContext } from "react"
-// import { ModalContext } from "../context/modal"
-// import ReactModal from "react-modal"
+import './modal.css';
 
-// import './style.css'
+const Modal = ({ handleClose, show, children }) => {
+  const showHideClassName = show ? "modal display-block" : "modal display-none";
 
-// const AddNewBookModal = () => {
-
-//     const newBook = {
-//         title: "",
-//         authorFirstName: "",
-//         authorLastName: "",
-//         cover_url: "",
-//         ISBN: "",
-//         numPages: null,
-//         status: ""
-//     }
-
-// }
-
-// export default AddNewBookModal
+  return (
+    <div className={showHideClassName}>
+      <section className="modal-main">
+        {children}
+        <button type="button" onClick={handleClose}>
+          Close
+        </button>
+      </section>
+    </div>
+  );
+};

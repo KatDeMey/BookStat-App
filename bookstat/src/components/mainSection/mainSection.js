@@ -6,14 +6,18 @@ import CompletedReadingList from "../readingLists/completedReadsList"
 import AddNewBookModal from "../modal/modal"
 import style from "./style.css"
 
+import Modal from './modal.js'
+
+//import  Navigate
+import { useNavigate } from "react-router-dom";
 
 const MainSection = ({ allBooks }) => {
 
+  const navigate = useNavigate()
+
   const handleAddNewBook = () => {
     console.log("you want to add a book to:")
-    //open modal
-    //in modal: user fills in form
-    //onClick: send POST request to 
+
   }
 
   return (
@@ -38,7 +42,7 @@ const MainSection = ({ allBooks }) => {
       <section className="reading-list-display">
         <div className="list-header">
           <h2>To Be Read</h2>
-            {/* <button className="add-to-list">+</button> */}
+          {/* <button className="add-to-list">+</button> */}
         </div>
         <ToBeReadList allBooks={allBooks} />
       </section>
