@@ -2,6 +2,8 @@ import BookIcon from "../../assets/BookIcon"
 import style from "./style.css"
 
 const Header = () => {
+
+    
     return (
         <>
             <section className="header">

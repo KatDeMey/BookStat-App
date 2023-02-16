@@ -1,0 +1,40 @@
+{
+  "books": [
+    {
+      "id": 0,
+      "title": "The Beautiful Ones",
+      "authorFirstName": "Silvia",
+      "authorLastName": "Moreno-Garcia",
+      "cover_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.zOfVx3YBe-N6tLUM6DKLwAHaLW%26pid%3DApi&f=1&ipt=21cfcc2adda96c3805815429332a093ddc5b34344a05b479e80dbdb0ae15a475&ipo=images",
+      "ISBN": "",
+      "numPages": 292,
+      "reading": true,
+      "tbr": false,
+      "finnished": false
+    },
+    {
+      "id": 1,
+      "title": "Mad Honey",
+      "authorFirstName": "Jodi",
+      "authorLastName": "Picoult",
+      "cover_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.iBAImwJT2M4eSLrDdJPGYQHaLY%26pid%3DApi&f=1&ipt=828e7eab7d181679851a58e65d9ad2dbc3948951f1a17505b870cfc210bd3faf&ipo=images",
+      "ISBN": "",
+      "numPages": null,
+      "reading": false,
+      "tbr": false,
+      "finnished": true
+    },
+    {
+      "id": 2,
+      "title": "Belladonna",
+      "authorFirstName": "Adalyn",
+      "authorLastName": "Grace",
+      "cover_url": "https://cdn.thestorygraph.com/vc0dpn5mpdadav77149xs0p6p5g4",
+      "ISBN": "",
+      "numPages": 416,
+      "reading": false,
+      "tbr": false,
+      "finnished": true
+    }
+  ]
+}
