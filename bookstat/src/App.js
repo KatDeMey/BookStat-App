@@ -9,19 +9,14 @@ import Navigation from './components/navigation/navigation';
 
 function App() {
 const [allBooks, setAllBooks] = useState([])
-const [toBeRead, setToBeRead] = useState([])
-const [currentReads, setCurrentReadss] = useState([])
-const [completedReads, setCompletedReads] = useState([])
 
 useState (() => {
 fetch('http://localhost:4010/books')
 .then((res)=> res.json())
 .then((data)=> {
   setAllBooks(data)
-  console.log("allBooks", data)
 })
 }, [])
-
 
   return (
     <div className="App">

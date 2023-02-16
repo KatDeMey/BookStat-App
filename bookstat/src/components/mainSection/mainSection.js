@@ -1,68 +1,54 @@
 import { useState } from "react"
 import ReadingList from "../readingLists/readingLists"
+import CurrentReadsList from "../readingLists/currentReadsList"
+import ToBeReadList from "../readingLists/toBeReadList"
+import CompletedReadingList from "../readingLists/completedReadsList"
+import AddNewBookModal from "../modal/modal"
 import style from "./style.css"
 
 
-const MainSection = ({allBooks}) => {
-   
+const MainSection = ({ allBooks }) => {
+
+  const handleAddNewBook = () => {
+    console.log("you want to add a book to:")
+    //open modal
+    //in modal: user fills in form
+    //onClick: send POST request to 
+  }
+
   return (
     <main className="mainSection scrollable">
       <section className="reading-list-display">
         <div className="list-header">
-          <h2>Current Reads</h2>
-          <button>+</button>
+          <h2>All Books</h2>
+          <button className="add-to-list" onClick={handleAddNewBook}>+</button>
+          <a>See All</a>
         </div>
+        <ReadingList allBooks={allBooks} />
+      </section>
 
-<ReadingList allBooks={allBooks}/>
-        {/* <ul className="current-reads">
-          {allBooks.map((book, index) => {
-            return (
-              <>
-                <li key={index}>
-                  <ReadingList allBooks={allBooks}/>
-                </li>
-              </>
-            )
-          })}
-        </ul> */}
+      <section className="reading-list-display">
+        <div className="list-header">
+          <h2>Current Reads</h2>
+          {/* <button className="add-to-list" >+</button> */}
+        </div>
+        <CurrentReadsList allBooks={allBooks} />
       </section>
 
       <section className="reading-list-display">
         <div className="list-header">
           <h2>To Be Read</h2>
-          <div>
-            <button>+</button>
-          </div>
+            {/* <button className="add-to-list">+</button> */}
         </div>
-        <ul className="TBR">
-          {allBooks.map((book, index) => {
-            return (
-              <>
-                <li key={index}>
-                  <ReadingList allBooks={allBooks}/>
-                </li>
-              </>
-            )
-          })}
-        </ul>
+        <ToBeReadList allBooks={allBooks} />
       </section>
 
       <section className="reading-list-display">
         <div className="list-header">
-          <h2>Most Popular</h2>
-          <button>+</button>
+          <h2>Completed Reads</h2>
+          {/* <button className="add-to-list">+</button> */}
         </div>
-        <ul className="anticipated-reads">
-          {allBooks.map((book, index) => {
-            return (
-              <>
-                <li key={index}>
-                  <ReadingList allBooks={allBooks}/>
-                </li>
-              </>
-            )
-          })}
-        </ul>
+        <CompletedReadingList allBooks={allBooks} />
       </section>
     </main >
   )
