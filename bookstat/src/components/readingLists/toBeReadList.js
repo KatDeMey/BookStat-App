@@ -7,7 +7,10 @@ const ToBeReadList = ({ allBooks }) => {
 //status === "tbr" "read" "reading"
 return (
     <ul className="current-reads">
-        {allBooks.filter(book => book.status === "tbr").map(filteredByReading => (
+        {allBooks.filter(book => 
+        book.status === "tbr" 
+        || 
+        book.status[0]=== true).map(filteredByReading => (
             <li key={filteredByReading.id} className="bookCard">
                 <img className="book-card-img" src={filteredByReading.cover_url} alt={filteredByReading.title}  />
                 <h4 className="readingListP">{filteredByReading.title}</h4>
