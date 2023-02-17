@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react"
-
+import './form.css'
 const initialState = {
     title: "",
     authorFirstName: "",
     authorLastName: "",
     cover_url: "",
     numPages: "",
-    status: ""
+    status: [false, false, false]
 }
 
 const Form = ({ allBooks, setAllBooks, setIsModalOpen }) => {
@@ -36,6 +36,7 @@ const Form = ({ allBooks, setAllBooks, setIsModalOpen }) => {
     const handleChange = (event) => {
         const name = event.target.name
         const value = event.target.value
+        const checked = event.target.checked
 
         if (name === "title") {
             setFormState({ ...formState, title: value })
@@ -53,78 +54,119 @@ const Form = ({ allBooks, setAllBooks, setIsModalOpen }) => {
             setFormState({ ...formState, numPages: value })
         }
         if (name === "status") {
-            setFormState({ ...formState, status: value })
+            const newState = { ...formState }
+            if (value === "tbr") {
+                newState.status[0] = !newState.status[0]
+                newState.status[1] = false
+                newState.status[2] = false
+                setFormState(newState)
+            } else if (value === "reading") {
+                newState.status[1] = !newState.status[1]
+                newState.status[0] = false
+                newState.status[2] = false
+                setFormState(newState)
+            } else if (value === "read") {
+                newState.status[2] = !newState.status[2]
+                newState.status[0] = false
+                newState.status[1] = false
+                setFormState(newState)
+            }
         }
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="bookTitle">Book Title *</label>
-            <input id="title"
-                name="title"
-                type="text"
-                value={formState.title}
-                required
-                onChange={handleChange} />
+            <ul>
+                <li>
+                    <label htmlFor="bookTitle">Book Title</label>
+                    <input id="title"
+                        name="title"
+                        type="text"
+                        value={formState.title}
+                        required
+                        onChange={handleChange} />
+                </li>
 
-            <br />
+                <li>
+                    <label htmlFor="authorFirstName">Author's First Name</label>
+                    <input id="authorFirstName"
+                        name="authorFirstName"
+                        type="text"
+                        value={formState.authorFirstName}
+                        required
+                        onChange={handleChange} />
+                </li>
 
-            <label htmlFor="authorFirstName">Author's First Name</label>
-            <input id="authorFirstName"
-                name="authorFirstName"
-                type="text"
-                value={formState.authorFirstName}
-                onChange={handleChange} />
+                <li>
+                    <label htmlFor="authorLastName"> Author's Last Name</label>
+                    <input id="authorLastName"
+                        name="authorLastName"
+                        type="text"
+                        value={formState.authorLastName}
+                        required
+                        onChange={handleChange} />
+                </li>
 
-            <br />
+                <li>
+                    <label htmlFor="cover_url"> Cover Image URL</label>
+                    <input id="cover_url"
+                        name="cover_url"
+                        type="text"
+                        value={formState.cover_url}
+                        onChange={handleChange} />
+                </li>
 
-            <label htmlFor="authorLastName"> Author's Last Name</label>
-            <input id="authorLastName"
-                name="authorLastName"
-                type="text"
-                value={formState.authorLastName}
-                required
-                onChange={handleChange} />
+                <li>
+                    <label htmlFor="numPages"> Number of Pages</label>
+                    <input id="numPages"
+                        name="numPages"
+                        type="text"
+                        value={formState.numPages}
+                        required
+                        onChange={handleChange} />
+                </li>
 
-            <br />
+                <div className="form__group">
+                    <p>Please Select Reading Status</p>
+                    <ul>
+                        <li>
+                            <label >
+                                <input
+                                    name="status"
+                                    type="checkbox"
+                                    value="tbr"
+                                    checked={formState.status[0]}
+                                    onChange={handleChange} />To Be Read
+                            </label>
+                        </li>
+                        <li>
+                            <label >
+                                <input
+                                    name="status"
+                                    type="checkbox"
+                                    value="reading"
+                                    checked={formState.status[1]}
+                                    onChange={handleChange} />Reading
+                            </label>
+                        </li>
+                        <li>
+                            <label >
+                                <input
+                                    name="status"
+                                    type="checkbox"
+                                    value="read"
+                                    checked={formState.status[2]}
+                                    onChange={handleChange} />Read
+                            </label>
+                        </li>
+                    </ul>
+                </div>
 
-            <label htmlFor="cover_url"> Cover Image URL</label>
-            <input id="cover_url"
-                name="cover_url"
-                type="text"
-                value={formState.cover_url}
-                onChange={handleChange} />
-
-            <br />
-
-            <label htmlFor="numPages"> Number of Pages *</label>
-            <input id="numPages"
-                name="numPages"
-                type="text"
-                value={formState.numPages}
-                required
-                onChange={handleChange} />
-
-            <br />
-
-            {/* TODO:
-            change below to a selection rather than text input*/}
-            <label htmlFor="status"> Please Select Reading Status</label>
-            <input id="status"
-                name="status"
-                type="text"
-                value={formState.status}
-                required
-                onChange={handleChange} />
-            <br />
-            <br />
-            <div className="formFooter">
-                <button onClick={(() => setIsModalOpen(false))}>Cancel</button>
-                <button type="submit" className="formSubmit">
-                    Add book
-                </button>
-            </div>
-        </form>
+                <input
+                    type="submit"
+                    value="Add Book" />
+            </ul>
+        </form >
     )
 }
 

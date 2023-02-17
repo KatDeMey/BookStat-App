@@ -58,19 +58,49 @@
       "title": "Tommorrow",
       "authorFirstName": "Gabrielle",
       "authorLastName": "z",
-      "cover_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1616340588i/57047667.jpg",
+      "cover_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Iti88j5QQXy11iOWRvStsgHaLS%26pid%3DApi&f=1&ipt=92713052cdfb9ef46bc68ef72c0170066dceb8fe96316c0a33efb3341bbe4583&ipo=images",
       "numPages": "416",
       "status": "tbr",
       "id": 6
     },
     {
       "title": "Harry Potter",
-      "authorFirstName": "test",
+      "authorFirstName": "JK",
       "authorLastName": "Rowling",
-      "cover_url": "",
-      "numPages": "0",
-      "status": "read",
+      "cover_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.VYDMhguzT5OFkTZpXyxG_QHaLH%26pid%3DApi&f=1&ipt=ae7e11c3c65a20d5676ecb80cabe6e92e3079dbd5e689d25acc6cb9ced0b059c&ipo=images",
+      "numPages": "300",
+      "status": [
+        false,
+        false,
+        true
+      ],
       "id": 7
+    },
+    {
+      "title": "I Want to Die but I Want to Eat Tteokbokki ",
+      "authorFirstName": "Baek",
+      "authorLastName": "Se-hee",
+      "cover_url": "https://cdn.thestorygraph.com/a03k94rjwjf9u0oadtnttp8dgbjg",
+      "numPages": "192",
+      "status": [
+        false,
+        true,
+        false
+      ],
+      "id": 8
+    },
+    {
+      "title": "A man and his Cat vol 8",
+      "authorFirstName": "JK",
+      "authorLastName": "second",
+      "cover_url": "",
+      "numPages": "171",
+      "status": [
+        true,
+        false,
+        false
+      ],
+      "id": 9
     }
   ]
 }
