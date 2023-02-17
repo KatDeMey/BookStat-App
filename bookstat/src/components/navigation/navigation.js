@@ -3,16 +3,13 @@
 import { useState } from "react"
 import { Link, Route, Routes } from "react-router-dom"
 import style from "./style.css"
-// import Modal from "../modal/modal"
+import Modal from "../modal/modal"
 
 
-const Navigation = ({ allBooks, setAllBooks }) => {
-
-    const [isModalOpen, setIsModalOpen] = useState(false)
+const Navigation = ({ allBooks, setAllBooks, isModalOpen, setIsModalOpen }) => {
 
     const handleClick = () => {
         setIsModalOpen(!isModalOpen)
-        console.log("openModal:", isModalOpen)
     }
     return (
         <>
@@ -31,10 +28,6 @@ const Navigation = ({ allBooks, setAllBooks }) => {
                         >
                             + Add New Book
                         </button>
-                        {/* {isModalOpen && <Modal allBooks={allBooks} setAllBooks={setAllBooks}
-                        isModalOpen={isModalOpen}
-                        setIsModalOpen={setIsModalOpen} />} */}
-
                     </ul>
                 </nav>
             </aside>

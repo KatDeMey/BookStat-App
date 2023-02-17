@@ -4,6 +4,9 @@ import style from "./style.css"
 
 const CurrentReadsList = ({ allBooks }) => {
     //status === "tbr" "read" "reading"
+
+    console.log("checking allBooks in currentReads:", allBooks)
+
     return (
         <ul className="current-reads">
             {allBooks.filter(book => book.status === "reading").map(filteredByReading => (

@@ -8,26 +8,34 @@ import Footer from './components/Footer/footer';
 import Header from './components/header/header';
 import MainSection from './components/mainSection/mainSection';
 import Navigation from './components/navigation/navigation';
+import Modal from './components/modal/modal';
 
 
 function App() {
   const [allBooks, setAllBooks] = useState([])
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
-    fetch('http://localhost:4010/books')
+    const fetchData = async () => {
+      const data = await fetch('http://localhost:4010/books')
       .then((res) => res.json())
       .then((data) => {
-        setAllBooks(data)
-      })
+              setAllBooks(data)})
+    }
+    fetchData()
+      .catch(console.error);
   }, [])
 
   return (
-
     <div className="App">
       <Header />
-      <Navigation allBooks={allBooks} setAllBooks={setAllBooks} />
-      <MainSection allBooks={allBooks} setAllBooks={setAllBooks} />
-      {/* <Form  /> */}
+      {isModalOpen && <Modal allBooks={allBooks} setAllBooks={setAllBooks}
+                        isModalOpen={isModalOpen}
+                        setIsModalOpen={setIsModalOpen} />}
+      <Navigation allBooks={allBooks} setAllBooks={setAllBooks} isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen} />
+      <MainSection allBooks={allBooks} setAllBooks={setAllBooks} isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen} />
       <Footer />
     </div>
   );

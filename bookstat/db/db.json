@@ -55,21 +55,21 @@
       "id": 5
     },
     {
-      "title": "Ship of Magic 2",
-      "authorFirstName": "Robin",
-      "authorLastName": "Hobb",
-      "cover_url": "",
-      "numPages": "880",
+      "title": "Tommorrow",
+      "authorFirstName": "Gabrielle",
+      "authorLastName": "z",
+      "cover_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1616340588i/57047667.jpg",
+      "numPages": "416",
       "status": "tbr",
       "id": 6
     },
     {
-      "title": "test",
+      "title": "Harry Potter",
       "authorFirstName": "test",
-      "authorLastName": "test",
-      "cover_url": "test",
-      "numPages": "1",
-      "status": "reading",
+      "authorLastName": "Rowling",
+      "cover_url": "",
+      "numPages": "0",
+      "status": "read",
       "id": 7
     }
   ]

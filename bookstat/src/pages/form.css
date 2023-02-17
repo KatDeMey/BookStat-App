@@ -1,8 +1,21 @@
-form {
-
-}
-/* 
-form>input>label {
-    color: blue;
-    text-align: left;
+/* form > .formFooter {
+    background-color: blue;
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 } */
+
+form > div > button {
+color:red;
+
+    /* width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer; */
+}

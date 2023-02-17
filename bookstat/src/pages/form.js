@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react"
-// import { useNavigate } from "react-router-dom";
 
 const initialState = {
     title: "",
@@ -10,19 +9,15 @@ const initialState = {
     status: ""
 }
 
-const Form = ({ allBooks, setAllBooks }) => {
+const Form = ({ allBooks, setAllBooks, setIsModalOpen }) => {
     const [formState, setFormState] = useState(initialState)
-    // const navigate = useNavigate()
 
-    //send POST to json server on form submit
-    const handleSubmit = (event) => {
+    const handleSubmit = async event => {
         event.preventDefault();
 
-        setAllBooks([...allBooks, formState])
-
-        const opts = {
+        const res = await fetch('http://localhost:4010/books', {
             method: 'POST',
-            headers: { 'content-type': 'application/json' },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 "title": formState.title,
                 "authorFirstName": formState.authorFirstName,
@@ -31,27 +26,11 @@ const Form = ({ allBooks, setAllBooks }) => {
                 "numPages": formState.numPages,
                 "status": formState.status
             })
-        }
-        fetch("http://localhost:4010/books", opts)
-            .then(res => res.json())
-            .then(data => {
-                // formState
-                setAllBooks(...allBooks, formState)
-                console.log("posted books formState:", formState)
-            })
+        })
+        const data = await res.json()
+        setAllBooks([...allBooks, data])
 
-        //reset the form. Timer to allow for post request to complete--> maybe implement await instead
-        setTimeout(() => {
-            setFormState(initialState);
-        }, 500)
-
-        fetch("http://localhost:4010/books")
-            .then(res => res.json())
-            .then(data => {
-                setAllBooks(data)
-            })
-
-        // navigate("/")
+        setIsModalOpen(false)
     }
 
     const handleChange = (event) => {
@@ -127,7 +106,7 @@ const Form = ({ allBooks, setAllBooks }) => {
                 onChange={handleChange} />
 
             <br />
-            
+
             {/* TODO:
             change below to a selection rather than text input*/}
             <label htmlFor="status"> Please Select Reading Status</label>
@@ -139,11 +118,12 @@ const Form = ({ allBooks, setAllBooks }) => {
                 onChange={handleChange} />
             <br />
             <br />
-
-            <input
-                className="form__submit"
-                type="submit"
-                value="Add Book" />
+            <div className="formFooter">
+                <button onClick={(() => setIsModalOpen(false))}>Cancel</button>
+                <button type="submit" className="formSubmit">
+                    Add book
+                </button>
+            </div>
         </form>
     )
 }

@@ -12,14 +12,13 @@ import style from "./style.css"
 
 // import { useNavigate } from "react-router-dom"
 
-const MainSection = ({ allBooks, setAllBooks }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+const MainSection = ({ allBooks, setAllBooks, isModalOpen, setIsModalOpen }) => {
+
 
   const handleClick = () => {
     setIsModalOpen(!isModalOpen)
     console.log("openModal:", isModalOpen)
 }
-  // const navigate = useNavigate()
 
 
   return (
@@ -28,17 +27,13 @@ const MainSection = ({ allBooks, setAllBooks }) => {
         <div className="list-header">
           <h2>All Books</h2>
           <button className="add-to-list" onClick={handleClick}>+</button>
-          {isModalOpen && <Modal allBooks={allBooks} setAllBooks={setAllBooks}
-                        isModalOpen={isModalOpen}
-                        setIsModalOpen={setIsModalOpen} />}
         </div>
-        <ReadingList allBooks={allBooks} />
+        <ReadingList allBooks={allBooks} setAllBooks={setAllBooks}/>
       </section>
 
       <section className="reading-list-display">
         <div className="list-header">
           <h2>Current Reads</h2>
-          {/* <button className="add-to-list" >+</button> */}
         </div>
         <CurrentReadsList allBooks={allBooks} />
       </section>
@@ -46,7 +41,6 @@ const MainSection = ({ allBooks, setAllBooks }) => {
       <section className="reading-list-display">
         <div className="list-header">
           <h2>To Be Read</h2>
-          {/* <button className="add-to-list">+</button> */}
         </div>
         <ToBeReadList allBooks={allBooks} />
       </section>
@@ -54,7 +48,6 @@ const MainSection = ({ allBooks, setAllBooks }) => {
       <section className="reading-list-display">
         <div className="list-header">
           <h2>Completed Reads</h2>
-          {/* <button className="add-to-list">+</button> */}
         </div>
         <CompletedReadingList allBooks={allBooks} />
       </section>

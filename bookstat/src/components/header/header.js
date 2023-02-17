@@ -3,12 +3,12 @@ import style from "./style.css"
 
 const Header = () => {
 
-    
+
     return (
         <>
             <section className="header">
                 <div className="appTitle">
-                    <img src="src\assets\BookIcon.svg" />
+                    <BookIcon />
                     <h1>BookStat</h1>
                 </div>
                 <form>
