@@ -1,16 +1,28 @@
+import Form from '../../pages/form';
 import './modal.css';
 
-const Modal = ({ handleClose, show, children }) => {
-  const showHideClassName = show ? "modal display-block" : "modal display-none";
+const Modal = ({ allBooks, setAllBooks, setIsModalOpen, isModalOpen, handleClose
+  // , show, children 
+}) => {
 
   return (
-    <div className={showHideClassName}>
-      <section className="modal-main">
-        {children}
-        <button type="button" onClick={handleClose}>
-          Close
-        </button>
-      </section>
+    <div className='modalBackground'>
+      <div className='modalContainer'>
+        <div className="titleCloseBtn">
+        <button className='close' onClick={(()=> setIsModalOpen(false))}> X </button>
+        </div>
+        <div className='title'>
+          <h1>Add a New Book</h1>
+        </div>
+        <div className='body'>
+          <Form  allBooks={allBooks} setAllBooks={setAllBooks}/>
+        </div>
+        <div className='footer'>
+          <button onClick={(()=> setIsModalOpen(false))}>cancel</button>
+        </div>
+      </div>
     </div>
   );
 };
+
+export default Modal

@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+// import { Route, Routes } from "react-router-dom"
+import { Link, Route, Routes } from "react-router-dom"
+
 import './App.css';
 
 import Footer from './components/Footer/footer';
@@ -8,21 +11,23 @@ import Navigation from './components/navigation/navigation';
 
 
 function App() {
-const [allBooks, setAllBooks] = useState([])
+  const [allBooks, setAllBooks] = useState([])
 
-useState (() => {
-fetch('http://localhost:4010/books')
-.then((res)=> res.json())
-.then((data)=> {
-  setAllBooks(data)
-})
-}, [])
+  useEffect(() => {
+    fetch('http://localhost:4010/books')
+      .then((res) => res.json())
+      .then((data) => {
+        setAllBooks(data)
+      })
+  }, [])
 
   return (
+
     <div className="App">
       <Header />
-      <Navigation />
-      <MainSection allBooks={allBooks}/>
+      <Navigation allBooks={allBooks} setAllBooks={setAllBooks} />
+      <MainSection allBooks={allBooks} setAllBooks={setAllBooks} />
+      {/* <Form  /> */}
       <Footer />
     </div>
   );

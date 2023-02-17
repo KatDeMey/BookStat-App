@@ -1,20 +1,45 @@
+// import { useNavigate } from "react-router-dom";
+// import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
+import { useState } from "react"
+import { Link, Route, Routes } from "react-router-dom"
 import style from "./style.css"
+// import Modal from "../modal/modal"
 
-const Navigation = () => {
+
+const Navigation = ({ allBooks, setAllBooks }) => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
+    const handleClick = () => {
+        setIsModalOpen(!isModalOpen)
+        console.log("openModal:", isModalOpen)
+    }
     return (
+        <>
+            <aside className='PlaceLeft'>
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>All Books</li>
+                        <li>
+                            To Be Read
+                        </li>
+                        <li>Current Reads</li>
+                        <li>Completed Reads</li>
+                        <button className="openModalBtn green"
+                            onClick={handleClick}
+                        >
+                            + Add New Book
+                        </button>
+                        {/* {isModalOpen && <Modal allBooks={allBooks} setAllBooks={setAllBooks}
+                        isModalOpen={isModalOpen}
+                        setIsModalOpen={setIsModalOpen} />} */}
 
-        <aside className='PlaceLeft'>
-            <nav>
-                <ul>
-                    <li><a>Home</a></li>
-                    <li><a>Shelves</a></li>
-                    <li><a>TBR</a></li>
-                    <li><a>Favourites</a></li>
-                    <li><a>Book stats</a></li>
-                </ul>
-            </nav>
-        </aside>
+                    </ul>
+                </nav>
+            </aside>
 
+        </>
     )
 }
 
