@@ -1,11 +1,11 @@
 import { Prisma } from '@prisma/client'
 import { sendDataResponse } from '../utils/responses.js'
 import {
-  createPost,
-  getAllPosts,
-  updatePostById,
+  createReview,
+  getAllReviews,
+  updateReviewById,
   deleteById
-} from '../domain/post.js'
+} from '../domain/review.js'
 
 export const create = async (req, res) => {
   const { content } = req.body

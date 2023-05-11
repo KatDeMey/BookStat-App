@@ -1,34 +1,24 @@
 import { Router } from "express";
 const router = Router();
+import {
+  create,
+  getAll,
+  getById,
+  getByTitle,
+  deleteBook,
+  updateById,
+} from "../controllers/book";
 
-router.post("/", validateAuthentication, create);
-router.get("/", validateAuthentication, getAll);
-router.post(
-  "/:id/comments/:commentId/like",
-  validateAuthentication,
-  likeComment
-);
-// router.delete(
-//   "/:id/comments/:commentId/like",
-//   validateAuthentication,
-//   deleteLikeFromComment
-// );
-// router.post("/:id/comments", validateAuthentication, createComment);
-// router.post("/:id/like", validateAuthentication, likePost);
-// router.delete("/:id/like", validateAuthentication, deleteLikeFromPost);
+router.post("/", create);
+router.get("/", getAll);
+router.get("/:id", getById);
+router.get("/:title", getByTitle);
+router.delete("/:id/:status", deleteBook); //delete from reading list (therefore, need id, and to see if it is in the list)
+router.patch("/:id", updateById);
+
+// router.post("/", validateAuthentication, createBook);
+// router.get("/", validateAuthentication, getAll);
 // router.get("/:id", validateAuthentication, getById);
-// router.delete("/:id", validateAuthentication, validateEditPostAuth, deletePost);
-// router.get("/:id/comments", validateAuthentication, getAllComments);
-// router.patch("/:id", validateAuthentication, validateEditPostAuth, updateById);
-// router.patch(
-//   "/:id/comments/:commentId",
-//   validateAuthentication,
-//   validateEditCommentAuth,
-//   editComment
-// );
-// router.delete(
-//   "/:id/comments/:commentId",
-//   validateAuthentication,
-//   deleteCommentFromPost
-// );
-// export default router;
+// router.get("/:title", validateAuthentication, getByTitle);
+// router.delete("/:id/:status", validateAuthentication, deleteById); //delete from reading list (therefore, need id, and to see if it is in the list)
+// router.patch("/:id", validateAuthentication, updateBook);

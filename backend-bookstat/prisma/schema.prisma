@@ -35,8 +35,10 @@ model Book {
   title           String
   authorFirstName String
   authorLastName  String
-  cover_url       String
+  coverUrl        String
   numPages        Int
+  publisher       String
+  yearPublished   Int
   ReadStatus      String
   createdAt       DateTime       @default(now())
   updatedAt       DateTime       @updatedAt
@@ -47,7 +49,7 @@ model Book {
 
 model Tags {
   id  Int    @id @default(autoincrement())
-  tag String
+  tag String @unique
 }
 
 model Reviews {
