@@ -16,7 +16,8 @@
     "prepare": "npx husky install"
   },
   "prisma": {
-    "seed": "node prisma/seed.js"
+    "seed": "node prisma/seed.js",
+    "schema": "./prisma/schema.prisma"
   },
   "eslintConfig": {
     "extends": [

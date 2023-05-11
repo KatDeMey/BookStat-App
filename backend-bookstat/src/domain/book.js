@@ -1,4 +1,4 @@
-import dbClient from '../utils/dbClient.js'
+import dbClient from "../utils/dbClient.js";
 
 export async function createBook(
   title,
@@ -25,25 +25,26 @@ export async function createBook(
 }
 
 export async function getAllBooks() {
-  return await dbClient.book.findMany(
+  return await dbClient.book
+    .findMany
     // {take: 6}
-  );
+    ();
 }
 
 export async function findById(id) {
   return await dbClient.book.findUnique({
     where: {
-      id: id
+      id: id,
     },
-  })
+  });
 }
 
 export async function deleteById(id) {
   return await dbClient.book.delete({
     where: {
-      id
-    }
-  })
+      id,
+    },
+  });
 }
 
 // export async function updateBookById(id, content) {
