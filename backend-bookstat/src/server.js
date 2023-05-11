@@ -1,20 +1,26 @@
-const express = require("express");
+import "dotenv/config";
+import express from "express";
+import cors from "cors";
+import bookRouter from "./routes/book.js";
+import authRouter from "./routes/auth.js";
+
 const app = express();
-const port = 4000;
-// const port = process.env.PORT || 4000;
 
+app.disable("x-powered-by");
+app.use(cors());
 app.use(express.json());
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
-app.get("/", (req, res) => {
-  res.json({ message: "BookStat server is good to go" });
-});
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.use(express.urlencoded({ extended: true }));
+
+app.use("/books", bookRouter);
+app.use("/", authRouter);
+
+app.get("*", (req, res) => {
+  res.status(404).json({
+    status: "fail",
+    data: {
+      resource: "Not found",
+    },
+  });
 });
 
-
-// export default app;
+export default app;

@@ -2,9 +2,11 @@ import { Prisma } from "@prisma/client";
 import { sendDataResponse, sendMessageResponse } from "../utils/responses.js";
 import { JWT_SECRET } from "../utils/config.js";
 import jwt from "jsonwebtoken";
+// import Book from "../domain/book.js";
 import User from "../domain/user.js";
 
-// TODO: edit validations below to suit current project
+
+// // TODO: edit validations below to suit current project
 export async function validateId(req, res, next) {
   if (!req.user) {
     return sendMessageResponse(res, 401, "Unable to verify user");
@@ -75,28 +77,28 @@ function validateTokenType(type) {
   return true;
 }
 
-export async function validateEditPostAuth(req, res, next) {
-  if (!req.user) {
-    return sendMessageResponse(res, 401, "Unable to verify user");
-  }
+// export async function validateEditPostAuth(req, res, next) {
+//   if (!req.user) {
+//     return sendMessageResponse(res, 401, "Unable to verify user");
+//   }
 
-  try {
-    const post = await findById(Number(req.params.id));
-    if (req.user.id === post.user.id || req.user.role === "TEACHER") {
-      req.post = post;
-    } else {
-      return sendDataResponse(res, 403, {
-        authorization: "You are not authorized to perform this action",
-      });
-    }
-  } catch (e) {
-    if (e instanceof Prisma.PrismaClientKnownRequestError) {
-      if (e.code === "P2025") {
-        console.error(e);
-        return sendDataResponse(res, 404, { error: "Post not found" });
-      }
-    }
-  }
+//   try {
+//     const post = await findById(Number(req.params.id));
+//     if (req.user.id === post.user.id || req.user.role === "TEACHER") {
+//       req.post = post;
+//     } else {
+//       return sendDataResponse(res, 403, {
+//         authorization: "You are not authorized to perform this action",
+//       });
+//     }
+//   } catch (e) {
+//     if (e instanceof Prisma.PrismaClientKnownRequestError) {
+//       if (e.code === "P2025") {
+//         console.error(e);
+//         return sendDataResponse(res, 404, { error: "Post not found" });
+//       }
+//     }
+//   }
 
-  next();
-}
+//   next();
+// }

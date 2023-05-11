@@ -1,71 +1,66 @@
 import dbClient from '../utils/dbClient.js'
 
-// TODO: convert posts to Books
-export async function createPost(content, userId) {
-  return await dbClient.post.create({
+export async function createBook(
+  title,
+  authorFirstName,
+  authorLastName,
+  coverUrl,
+  numPages,
+  publisher,
+  yearPublished,
+  ReadStatus
+) {
+  return await dbClient.book.create({
     data: {
-      content,
-      userId
-    }
-  })
+      title,
+      authorFirstName,
+      authorLastName,
+      coverUrl,
+      numPages,
+      publisher,
+      yearPublished,
+      ReadStatus,
+    },
+  });
 }
 
-export async function getAllPosts() {
-  return await dbClient.post.findMany({
-    include: {
-      user: {
-        select: {
-          id: true,
-          cohortId: true,
-          role: true,
-          profile: true
-        }
-      }
-    }
-  })
+export async function getAllBooks() {
+  return await dbClient.book.findMany(
+    // {take: 6}
+  );
 }
 
 export async function findById(id) {
-  return await dbClient.post.findUnique({
+  return await dbClient.book.findUnique({
     where: {
       id: id
     },
-    include: {
-      user: {
-        select: {
-          id: true,
-          cohortId: true,
-          role: true,
-          profile: true
-        }
-      }
-    }
   })
 }
 
 export async function deleteById(id) {
-  return await dbClient.post.delete({
+  return await dbClient.book.delete({
     where: {
       id
     }
   })
 }
 
-export async function updatePostById(id, content) {
-  return await dbClient.post.update({
-    where: {
-      id
-    },
-    data: {
-      content
-    },
-    include: {
-      user: {
-        select: {
-          id: true,
-          role: true
-        }
-      }
-    }
-  })
-}
+// export async function updateBookById(id, content) {
+//   return await dbClient.book.update({
+//     where: {
+//       id,
+//     },
+//     data: {
+//       content,
+//     },
+//     include: {
+//       user: {
+//         select: {
+//           id: true,
+//           role: true,
+//         },
+//       },
+//     },
+//   });
+// }

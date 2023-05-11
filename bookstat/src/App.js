@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      await fetch('http://localhost:4010/books')
+      await fetch('http://localhost:4000/books')
       .then((res) => res.json())
       .then((data) => {
               setAllBooks(data)})
