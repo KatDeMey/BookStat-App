@@ -1,7 +1,7 @@
 // import { useNavigate } from "react-router-dom";
 // import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
-import { useState } from "react"
-import { Link, Route, Routes } from "react-router-dom"
+// import { useState } from "react"
+// import { Link, Route, Routes } from "react-router-dom"
 import style from "./style.css"
 import Modal from "../modal/modal"
 

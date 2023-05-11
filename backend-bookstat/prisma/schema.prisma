@@ -1,3 +1,6 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,13 +11,14 @@ datasource db {
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
-
-
 model User {
-  id            Int             @id @default(autoincrement())
-  email         String          @unique
-  password      String
-  profile       Profile?   
+  id           Int            @id @default(autoincrement())
+  email        String         @unique
+  password     String
+  profile      Profile?
+  TagOnBook    TagOnBook[]
+  RatingOfBook RatingOfBook[]
+  Reviews      Reviews[]
 }
 
 model Profile {
@@ -24,4 +28,60 @@ model Profile {
   firstName String
   lastName  String
   bio       String?
+}
+
+model Book {
+  id              Int            @id @default(autoincrement())
+  title           String
+  authorFirstName String
+  authorLastName  String
+  cover_url       String
+  numPages        Int
+  ReadStatus      String
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  TagOnBook       TagOnBook[]
+  RatingOfBook    RatingOfBook[]
+  Reviews         Reviews[]
+}
+
+model Tags {
+  id  Int    @id @default(autoincrement())
+  tag String
+}
+
+model Reviews {
+  id        Int      @id @default(autoincrement())
+  content   String
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  bookId    Int
+  book      Book     @relation(fields: [bookId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Ratings {
+  id     Int @id @default(autoincrement())
+  rating Int
+}
+
+model TagOnBook {
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  bookId    Int
+  book      Book     @relation(fields: [bookId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@id([userId, bookId])
+}
+
+model RatingOfBook {
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  bookId    Int
+  book      Book     @relation(fields: [bookId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@id([userId, bookId])
 }

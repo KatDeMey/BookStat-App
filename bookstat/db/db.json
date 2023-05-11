@@ -101,6 +101,32 @@
         false
       ],
       "id": 9
+    },
+    {
+      "title": "Love in the times of serial killers",
+      "authorFirstName": "Alicia",
+      "authorLastName": "Thompson",
+      "cover_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.CKSt4f0FJioBpoga9CN6mQAAAA%26pid%3DApi&f=1&ipt=19a420fa9eba97c16c59b32882e82387116871fd7246d1f1065d75279091cc9b&ipo=images",
+      "numPages": "337",
+      "status": [
+        false,
+        true,
+        false
+      ],
+      "id": 10
+    },
+    {
+      "title": "Cleopatra and Frankenstein",
+      "authorFirstName": "Coco",
+      "authorLastName": "Mellors",
+      "cover_url": "https://cdn.thestorygraph.com/mbv5mdqrzbngj430vluadnjzkoyr",
+      "numPages": "368",
+      "status": [
+        false,
+        true,
+        false
+      ],
+      "id": 11
     }
   ]
 }

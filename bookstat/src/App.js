@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 // import { Route, Routes } from "react-router-dom"
-import { Link, Route, Routes } from "react-router-dom"
+// import { Link, Route, Routes } from "react-router-dom"
 
 import './App.css';
 
@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch('http://localhost:4010/books')
+      await fetch('http://localhost:4010/books')
       .then((res) => res.json())
       .then((data) => {
               setAllBooks(data)})

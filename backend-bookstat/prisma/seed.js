@@ -3,34 +3,21 @@ import bcrypt from "bcrypt";
 const prisma = new PrismaClient();
 
 async function seed() {
-  const user1 = await createUser(
-    "test@test.com",
-    "Testpassword1!",
-    "Frank",
-    "Reeds",
-    "Hello, booksta!"
-  );
-  const user2 = await createUser(
-    "profile2@test.com",
-    "Testpassword1!",
-    "Rick",
-    "Sanchez",
-    "Hello there!",
-    "Author, lover of stories"
-  );
-
+const user = await createUser();
+     process.exit(0);
 }
 
-async function createUser(email, password, firstName, lastName, bio) {
+async function createUser() {
+  const password = "Password1!";
   const user = await prisma.user.create({
     data: {
-      email,
+      email: "test@test.com",
       password: await bcrypt.hash(password, 8),
       profile: {
         create: {
-          firstName,
-          lastName,
-          bio,
+          firstName: "Frank",
+          lastName: "Reeds",
+          bio: "Hello, booksta!",
         },
       },
     },
@@ -39,13 +26,14 @@ async function createUser(email, password, firstName, lastName, bio) {
     },
   });
 
-  console.info(`${firstName} created`, user);
+   console.log("user created", user);
 
   return user;
 }
 
-seed().catch(async (e) => {
-  console.error(e);
-  await prisma.$disconnect();
-  process.exit(1);
-});
+seed()
+  .catch(async (e) => {
+    console.error(e);
+    await prisma.$disconnect();
+  })
+  .finally(() => process.exit(1));
