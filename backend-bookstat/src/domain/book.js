@@ -47,21 +47,28 @@ export async function deleteById(id) {
   });
 }
 
-// export async function updateBookById(id, content) {
-//   return await dbClient.book.update({
+export async function updateBookById(id, data) {
+  return await dbClient.book.update({
+    where: {
+      id,
+    },
+    data,
+  });
+}
+
+// TODO:
+// export async function findByStatus(ReadStatus) {
+//   return await dbClient.book.findMany({
 //     where: {
-//       id,
+//       ReadStatus,
 //     },
-//     data: {
-//       content,
-//     },
-//     include: {
-//       user: {
-//         select: {
-//           id: true,
-//           role: true,
-//         },
-//       },
+//   });
+// }
+
+// export async function findByTitle(title) {
+//   return await dbClient.book.findMany({
+//     where: {
+//       title: title
 //     },
 //   });
 // }

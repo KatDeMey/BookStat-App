@@ -35,10 +35,10 @@ model Book {
   title           String
   authorFirstName String
   authorLastName  String
-  coverUrl        String
-  numPages        Int
-  publisher       String
-  yearPublished   Int
+  coverUrl        String?
+  numPages        Int?
+  publisher       String?
+  yearPublished   Int?
   ReadStatus      String
   createdAt       DateTime       @default(now())
   updatedAt       DateTime       @updatedAt

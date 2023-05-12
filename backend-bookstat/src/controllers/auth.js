@@ -45,8 +45,14 @@ async function validateCredentials(password, user) {
   }
 
   const isPasswordValid = await bcrypt.compare(password, user.passwordHash)
+  // const isPasswordValid = await (password, user.password);
+
+  // if (password !== user.password) {
   if (!isPasswordValid) {
-    return false
+    // console.log(password)
+    // console.log("!==", user.password);
+
+    return false;
   }
 
   return true

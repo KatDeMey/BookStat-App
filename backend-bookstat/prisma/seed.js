@@ -1,5 +1,5 @@
 // import bcrypt from "bcrypt";
-const { PrismaClient } = require("@prisma/client");
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -118,3 +118,41 @@ seed()
     await prisma.$disconnect();
   })
   .finally(() => process.exit(1));
+
+
+       
+      
+     
+    
+      // {
+      //   title: "The Leviathan",
+      //   authorFirstName: "Rosie",
+      //   authorLastName: "Andrews",
+      //   coverUrl: "https://m.media-amazon.com/images/I/614m+rC7EJL.jpg",
+      //   numPages: 416,
+      //   publisher: null,
+      //   yearPublished: null,
+      //   ReadStatus: "tbr",
+      // },
+      // {
+      //   title: "A man and his Cat vol. 7",
+      //   authorFirstName: "Umi",
+      //   authorLastName: "Sakurai",
+      //   coverUrl:
+      //     "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1616340588i/57047667.jpg",
+      //   numPages: 171,
+      //   publisher: null,
+      //   yearPublished: null,
+      //   ReadStatus: "read",
+      // },
+      // {
+      //   title: "Love in the times of serial killers",
+      //   authorFirstName: "Alicia",
+      //   authorLastName: "Thompson",
+      //   coverUrl:
+      //     "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.CKSt4f0FJioBpoga9CN6mQAAAA%26pid%3DApi&f=1&ipt=19a420fa9eba97c16c59b32882e82387116871fd7246d1f1065d75279091cc9b&ipo=images",
+      //   numPages: 337,
+      //   publisher: null,
+      //   yearPublished: null,
+      //   ReadStatus: "reading",
+      // },
