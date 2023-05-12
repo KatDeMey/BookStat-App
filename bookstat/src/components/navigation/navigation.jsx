@@ -3,7 +3,7 @@
 // import { useState } from "react"
 // import { Link, Route, Routes } from "react-router-dom"
 import style from "./style.css"
-import Modal from "../modal/modal"
+import Modal from "../modal/modal.jsx"
 
 
 const Navigation = ({ allBooks, setAllBooks, isModalOpen, setIsModalOpen }) => {

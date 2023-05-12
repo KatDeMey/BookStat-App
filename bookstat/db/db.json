@@ -69,11 +69,7 @@
       "authorLastName": "Rowling",
       "cover_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.VYDMhguzT5OFkTZpXyxG_QHaLH%26pid%3DApi&f=1&ipt=ae7e11c3c65a20d5676ecb80cabe6e92e3079dbd5e689d25acc6cb9ced0b059c&ipo=images",
       "numPages": "300",
-      "status": [
-        false,
-        false,
-        true
-      ],
+      "status": "read",
       "id": 7
     },
     {
@@ -82,11 +78,7 @@
       "authorLastName": "Se-hee",
       "cover_url": "https://cdn.thestorygraph.com/a03k94rjwjf9u0oadtnttp8dgbjg",
       "numPages": "192",
-      "status": [
-        false,
-        true,
-        false
-      ],
+      "status": "reading",
       "id": 8
     },
     {
@@ -95,11 +87,7 @@
       "authorLastName": "second",
       "cover_url": "",
       "numPages": "171",
-      "status": [
-        true,
-        false,
-        false
-      ],
+      "status": "tbr",
       "id": 9
     },
     {
@@ -108,11 +96,7 @@
       "authorLastName": "Thompson",
       "cover_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.CKSt4f0FJioBpoga9CN6mQAAAA%26pid%3DApi&f=1&ipt=19a420fa9eba97c16c59b32882e82387116871fd7246d1f1065d75279091cc9b&ipo=images",
       "numPages": "337",
-      "status": [
-        false,
-        true,
-        false
-      ],
+      "status": "reading",
       "id": 10
     },
     {
@@ -121,11 +105,7 @@
       "authorLastName": "Mellors",
       "cover_url": "https://cdn.thestorygraph.com/mbv5mdqrzbngj430vluadnjzkoyr",
       "numPages": "368",
-      "status": [
-        false,
-        true,
-        false
-      ],
+      "status": "reading",
       "id": 11
     }
   ]

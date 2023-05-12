@@ -1,16 +1,19 @@
-import { useState } from "react"
+// import { useState } from "react"
 import DeleteBookIcon from "../../assets/deleteBookIcon"
-import style from "./style.css"
+// import style from "./style.css"
 
 
 const ReadingList = ({ allBooks, setAllBooks }) => {
 
 
     const handleDelete = async id => {
-        const res = await fetch(`http://localhost:4010/books/${id}`, { method: 'DELETE' })
-        const data = await res.json()
-        const filteredBooks = allBooks.filter(book => book.id !== id)
-        setAllBooks(filteredBooks)
+        console.log("delete")
+        // const res = await fetch(`http://localhost:4000/books/${id}`, {
+        //   method: "DELETE",
+        // });
+        // const data = await res.json()
+        // const filteredBooks = allBooks.filter(book => book.id !== id)
+        // setAllBooks(filteredBooks)
       }
 
     return (
@@ -18,7 +21,7 @@ const ReadingList = ({ allBooks, setAllBooks }) => {
             {allBooks.map((book, index) => {
                 return (
                     <li key={index} className="bookCard">
-                        <img className="book-card-img" src={book.cover_url} alt={book.title} />
+                        <img className="book-card-img" src={book.coverUrl} alt={book.title} />
                         <button class="overlay-delete"
                             onClick={() => {
                                 handleDelete(book.id)
