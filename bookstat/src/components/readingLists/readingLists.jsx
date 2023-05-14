@@ -1,6 +1,6 @@
 // import { useState } from "react"
 import DeleteBookIcon from "../../assets/deleteBookIcon"
-// import style from "./style.css"
+import style from "./style.css"
 
 
 const ReadingList = ({ allBooks, setAllBooks }) => {
