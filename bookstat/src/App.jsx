@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
-import Header from "./components/header/header.jsx";
-import Navigation from "./components/navigation/navigation.jsx";
-import MainSection from "./components/mainSection/mainSection.jsx";
-import Footer from "./components/Footer/footer.jsx";
+import { Routes, Route } from "react-router-dom";
 
+import Home from "./homePage";
+import TBRPage from "./components/pages/tbrPage";
+import AllBooks from "./components/pages/AllBooks";
+import CurrentReads from "./components/pages/ReadingPage";
+import ReadPage from "./components/pages/ReadPage";
 import "./App.css";
 
 function App() {
   const [allBooks, setAllBooks] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("http://localhost:4000/books")
@@ -16,33 +18,55 @@ function App() {
         console.log(response);
         return response.json();
       })
-      .then((data) =>
-        // console.log("data.books-----", data.data.books)
-        // const books = data.data.books
-        setAllBooks(data.data.books)
-      );
+      .then((data) => setAllBooks(data.data.books))
+      .then(() => setLoading(false));
   }, []);
 
-  useEffect(() => {}, []);
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
-      <div className="App">
-        <Header />
-        <Navigation
-          allBooks={allBooks}
-          setAllBooks={setAllBooks}
-          isModalOpen={isModalOpen}
-          setIsModalOpen={setIsModalOpen}
+      <Routes>
+        <Route
+          path={"/"}
+          element={
+            <Home
+              allBooks={allBooks}
+              setAllBooks={setAllBooks}
+              // isModalOpen={isModalOpen}
+              // setIsModalOpen={setIsModalOpen}
+              // handleDelete={handleDelete}
+            />
+          }
         />
-        <MainSection
-          allBooks={allBooks}
-          setAllBooks={setAllBooks}
-          isModalOpen={isModalOpen}
-          setIsModalOpen={setIsModalOpen}
+        <Route
+          path={"/AllBooks"}
+          element={<AllBooks allBooks={allBooks} setAllBooks={setAllBooks} />}
         />
-        <Footer />
-      </div>
+        <Route
+          path={"/CurrentReads"}
+          element={
+            <CurrentReads
+              allBooks={allBooks}
+              setAllBooks={setAllBooks}
+              // handleDelete={handleDelete}
+            />
+          }
+        />
+        <Route
+          path="/tbr"
+          element={<TBRPage allBooks={allBooks} setAllBooks={setAllBooks} />}
+        />
+        <Route
+          path="/Read"
+          element={<ReadPage allBooks={allBooks} setAllBooks={setAllBooks} />}
+        />
+        {/* TODO: */}
+        {/* <Route  path="/book/:id" element={} />
+        <Route  path="/book/:id/edit" element={} /> */}
+      </Routes>
     </>
   );
 }

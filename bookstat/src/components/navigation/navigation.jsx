@@ -1,39 +1,47 @@
 // import { useNavigate } from "react-router-dom";
-// import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
-// import { useState } from "react"
+import { BrowserRouter, Link, Route, Routes, Navigate } from "react-router-dom"; // import { useState } from "react"
 // import { Link, Route, Routes } from "react-router-dom"
-import style from "./style.css"
-import Modal from "../modal/modal.jsx"
-
+import style from "./style.css";
+import Modal from "../modal/modal.jsx";
 
 const Navigation = ({ allBooks, setAllBooks, isModalOpen, setIsModalOpen }) => {
+  const handleClick = () => {
+    setIsModalOpen(!isModalOpen);
+    console.log("openModal:", isModalOpen);
+  };
+  return (
+    <>
+      <aside className="PlaceLeft">
+        <nav>
+          <ul>
+            <li>
+              {" "}
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              {" "}
+              <Link to="/AllBooks">All Books</Link>{" "}
+            </li>
+            <li>
+              {" "}
+              <Link to="/tbr">To Be Read</Link>
+            </li>
+            <li>
+              {" "}
+              <Link to="/CurrentReads">Current Reads</Link>
+            </li>
+            <li>
+              {" "}
+              <Link to="/Read">Completed Reads</Link>
+            </li>
+            <button className="openModalBtn green" onClick={handleClick}>
+              + Add New Book
+            </button>
+          </ul>
+        </nav>
+      </aside>
+    </>
+  );
+};
 
-    const handleClick = () => {
-        setIsModalOpen(!isModalOpen)
-    }
-    return (
-        <>
-            <aside className='PlaceLeft'>
-                <nav>
-                    <ul>
-                        <li>Home</li>
-                        <li>All Books</li>
-                        <li>
-                            To Be Read
-                        </li>
-                        <li>Current Reads</li>
-                        <li>Completed Reads</li>
-                        <button className="openModalBtn green"
-                            onClick={handleClick}
-                        >
-                            + Add New Book
-                        </button>
-                    </ul>
-                </nav>
-            </aside>
-
-        </>
-    )
-}
-
-export default Navigation
+export default Navigation;
