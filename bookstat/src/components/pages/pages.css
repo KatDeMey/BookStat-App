@@ -40,3 +40,20 @@ a:hover {
 a {
     text-decoration: none;
 }
+
+.pageView {
+    padding: 45px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+}
+
+.imgBigger {
+    width: 250px;
+    height: 400px;
+}
+
+.Right {
+    border: solid 1px gray;
+    padding: 35px;
+}

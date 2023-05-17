@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./form.css";
-import Header from "../header/header";
-import Navigation from "../navigation/navigation";
-import Footer from "../Footer/footer";
+import Header from "../../header/header";
+import Navigation from "../../navigation/navigation";
+import Footer from "../../Footer/footer";
 
-import "../../App.css";
+import "../../../App.css";
 
 const initialState = {
   title: "",
@@ -18,7 +18,6 @@ const initialState = {
   ReadStatus: "notRead",
 };
 
-//TODO: redesign form to have a dropdown menu?
 const Form = ({ allBooks, setAllBooks }) => {
   const [formState, setFormState] = useState(initialState);
   const navigate = useNavigate();

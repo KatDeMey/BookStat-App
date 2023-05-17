@@ -6,7 +6,9 @@ import TBRPage from "./components/pages/tbrPage";
 import AllBooks from "./components/pages/AllBooks";
 import CurrentReads from "./components/pages/ReadingPage";
 import ReadPage from "./components/pages/ReadPage";
-import Form from "./components/pages/form";
+// import Form from "./components/pages/form";
+import Form from "./components/pages/forms/newBookForm";
+import BookEdit from "./components/pages/forms/editBook";
 
 import BookView from "./components/pages/bookView";
 import "./App.css";
@@ -60,7 +62,10 @@ function App() {
         />
         {/* TODO: */}
         <Route path="/book/:id" element={<BookView allBooks={allBooks} />} />
-        {/* <Route  path="/book/:id/edit" element={} /> */}
+        <Route
+          path="/book/:id/edit"
+          element={<BookEdit allBooks={allBooks} setAllBooks={setAllBooks} />}
+        />
       </Routes>
     </>
   );

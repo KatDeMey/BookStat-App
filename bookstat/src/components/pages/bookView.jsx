@@ -1,41 +1,70 @@
 import Navigation from "../navigation/navigation";
 import Header from "../header/header";
-import "./pages.css"
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import "./pages.css";
 
-const BookView = ({allBooks}) => {
-  // useParams
-console.log(allBooks)
-const {id} = useParams()
-console.log(typeof(id))
-const filtered = allBooks.filter((book) => book.id === Number(id))
-console.log("Book =", filtered);
-const book = filtered[0]
+const BookEdit = ({ allBooks }) => {
+  console.log(allBooks);
+  const { id } = useParams();
+  console.log(typeof id);
+  const filtered = allBooks.filter((book) => book.id === Number(id));
+  const book = filtered[0];
 
-return (
+  return (
     <>
       <div className="Pages">
         <Header classname="PageHeader" />
         <Navigation classname="PageNav" />
-        <main className="main">
-          <h2>{book.title}</h2>
-          <br />
-          <p>
-            Author: {book.authorFirstName} {book.authorLastName}
-          </p>
-          <p>Publisher: {book.publisher}</p>
-          <p>Pages: {book.numPages}</p>
-          <p>Year Published: {book.yearPublished}</p>
-          <p>Read Status: {book.ReadStatus} </p>
-          <img
-            className="book-card-img"
-            src={book.coverUrl}
-            alt={book.title}
-          />
+        <main className="main pageView">
+          <div className="Left">
+            <h2>{book.title}</h2>
+            <br />
+            <p>
+              <strong>Author:</strong> {book.authorFirstName}{" "}
+              {book.authorLastName}
+            </p>
+            <p>
+              <strong>Publisher:</strong> {book.publisher}
+            </p>
+            <p>
+              <strong>Pages:</strong> {book.numPages}
+            </p>
+            <p>
+              <strong>Year Published:</strong> {book.yearPublished}
+            </p>
+            <p>
+              <strong>Read Status:</strong> {book.ReadStatus}{" "}
+            </p>
+            <img
+              className="book-card-img imgBigger"
+              src={book.coverUrl}
+              alt={book.title}
+            />
+            <br />
+            <br />
+            <hr />
+            <br />
+            <Link to={`/book/${book.id}/edit`}><u>Edit</u></Link>
+          </div>
+          <div className="Right">
+            <p>
+              <strong>Review:</strong>
+            </p>
+            <p>
+              {" "}
+              {book.review ? (
+                book.review
+              ) : (
+                <Link to={`/book/${book.id}/review`}>
+                  <u>Add your review</u>
+                </Link>
+              )}{" "}
+            </p>
+          </div>
         </main>
       </div>
     </>
   );
 };
 
-export default BookView;
+export default BookEdit;
