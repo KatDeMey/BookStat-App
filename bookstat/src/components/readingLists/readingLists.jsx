@@ -1,8 +1,7 @@
-import { useState } from "react";
 import DeleteBookIcon from "../../assets/deleteBookIcon";
-// import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import style from "./style.css";
+import "./style.css";
 
 const ReadingList = ({ allBooks, setAllBooks }) => {
   const handleDelete = async (id) => {
@@ -19,25 +18,27 @@ const ReadingList = ({ allBooks, setAllBooks }) => {
     <ul className="current-reads">
       {allBooks.map((book, index) => {
         return (
-          <li key={index} className="bookCard">
-            <img
-              className="book-card-img"
-              src={book.coverUrl}
-              alt={book.title}
-            />
-            <button
-              class="overlay-delete"
-              onClick={() => {
-                handleDelete(book.id);
-              }}
-            >
-              <DeleteBookIcon />
-            </button>
-            <h4 className="readingListP">{book.title}</h4>
-            <h5 className="readingListhP">
-              {book.authorFirstName} {book.authorLastName}
-            </h5>
-          </li>
+          <Link to={`book/${book.id}`}>
+            <li key={index} className="bookCard">
+              <img
+                className="book-card-img"
+                src={book.coverUrl}
+                alt={book.title}
+              />
+              <button
+                class="overlay-delete"
+                onClick={() => {
+                  handleDelete(book.id);
+                }}
+              >
+                <DeleteBookIcon />
+              </button>
+              <h4 className="readingListP">{book.title}</h4>
+              <h5 className="readingListhP">
+                {book.authorFirstName} {book.authorLastName}
+              </h5>
+            </li>
+          </Link>
         );
       })}
     </ul>

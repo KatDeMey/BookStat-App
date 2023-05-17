@@ -1,0 +1,42 @@
+.Pages {
+    display: grid;
+    height: 100vh;
+
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 65px, 1fr, 15px;
+
+    grid-template-areas:
+        "header header"
+        "aside  main"
+        "footer footer ";
+}
+
+.PageHeader {
+    grid-area: header;
+}
+
+.PageNav {
+    grid-area: aside;
+    transform: translateY(-50%);
+}
+
+.main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+
+li {
+    list-style: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}

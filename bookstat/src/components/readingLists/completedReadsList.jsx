@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import DeleteBookIcon from "../../assets/deleteBookIcon";
 
-import style from "./style.css";
+import"./style.css";
 
 const CompletedReadingList = ({ allBooks, handleDelete }) => {
   //status === "tbr" "read" "reading"
@@ -9,6 +10,7 @@ const CompletedReadingList = ({ allBooks, handleDelete }) => {
   return (
     <ul className="current-reads">
       {filtered.map((filteredByReading) => (
+          <Link to={`book/${filteredByReading.id}`}>
         <li key={filteredByReading.id} className="bookCard">
           <img
             className="book-card-img"
@@ -31,6 +33,7 @@ const CompletedReadingList = ({ allBooks, handleDelete }) => {
             {filteredByReading.authorLastName}
           </h5>
         </li>
+        </Link>
       ))}
     </ul>
   );

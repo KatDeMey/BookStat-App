@@ -1,35 +1,18 @@
 import { useState } from "react";
-// import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom";
-import { useNavigate } from "react";
-import Modal from "../modal/modal.jsx";
 
 import ReadingList from "../readingLists/readingLists.jsx";
 import CurrentReadsList from "../readingLists/currentReadsList.jsx";
 import ToBeReadList from "../readingLists/toBeReadList.jsx";
 import CompletedReadingList from "../readingLists/completedReadsList.jsx";
-// import AddNewBookModal from "../modal/modal.jsx";
-import style from "./style.css";
+import "./style.css";
 
-// import { useNavigate } from "react-router-dom"
 
 const MainSection = ({
   allBooks,
   setAllBooks,
-  isModalOpen,
-  setIsModalOpen,
 }) => {
-  const handleClick = () => {
-    setIsModalOpen(!isModalOpen);
-    console.log("Handled click in main.jsx");
-    console.log("openModal:", isModalOpen);
-  };
 
-  const handleModalOpen = () => {
-    if (isModalOpen) {
-      return <Modal allBooks={allBooks} setAllBooks={setAllBooks} />;
-    }
-  };
 
   return (
     <main className="mainSection scrollable">
@@ -41,7 +24,6 @@ const MainSection = ({
           <Link to="/AllBooks">See All</Link>
         </div>
         <ReadingList allBooks={allBooks} setAllBooks={setAllBooks} />
-        {handleModalOpen()}
       </section>
 
       <section className="reading-list-display">

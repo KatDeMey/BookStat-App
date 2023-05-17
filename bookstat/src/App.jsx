@@ -7,6 +7,8 @@ import AllBooks from "./components/pages/AllBooks";
 import CurrentReads from "./components/pages/ReadingPage";
 import ReadPage from "./components/pages/ReadPage";
 import Form from "./components/pages/form";
+
+import BookView from "./components/pages/bookView";
 import "./App.css";
 
 function App() {
@@ -32,15 +34,7 @@ function App() {
       <Routes>
         <Route
           path={"/"}
-          element={
-            <Home
-              allBooks={allBooks}
-              setAllBooks={setAllBooks}
-              // isModalOpen={isModalOpen}
-              // setIsModalOpen={setIsModalOpen}
-              // handleDelete={handleDelete}
-            />
-          }
+          element={<Home allBooks={allBooks} setAllBooks={setAllBooks} />}
         />
         <Route
           path={"/AllBooks"}
@@ -49,11 +43,7 @@ function App() {
         <Route
           path={"/CurrentReads"}
           element={
-            <CurrentReads
-              allBooks={allBooks}
-              setAllBooks={setAllBooks}
-              // handleDelete={handleDelete}
-            />
+            <CurrentReads allBooks={allBooks} setAllBooks={setAllBooks} />
           }
         />
         <Route
@@ -69,8 +59,8 @@ function App() {
           element={<Form allBooks={allBooks} setAllBooks={setAllBooks} />}
         />
         {/* TODO: */}
-        {/* <Route  path="/book/:id" element={} />
-        <Route  path="/book/:id/edit" element={} /> */}
+        <Route path="/book/:id" element={<BookView allBooks={allBooks} />} />
+        {/* <Route  path="/book/:id/edit" element={} /> */}
       </Routes>
     </>
   );
