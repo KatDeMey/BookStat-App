@@ -6,6 +6,7 @@ import TBRPage from "./components/pages/tbrPage";
 import AllBooks from "./components/pages/AllBooks";
 import CurrentReads from "./components/pages/ReadingPage";
 import ReadPage from "./components/pages/ReadPage";
+import Form from "./components/pages/form";
 import "./App.css";
 
 function App() {
@@ -62,6 +63,10 @@ function App() {
         <Route
           path="/Read"
           element={<ReadPage allBooks={allBooks} setAllBooks={setAllBooks} />}
+        />
+        <Route
+          path="/AddNewBook"
+          element={<Form allBooks={allBooks} setAllBooks={setAllBooks} />}
         />
         {/* TODO: */}
         {/* <Route  path="/book/:id" element={} />

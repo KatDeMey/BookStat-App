@@ -9,7 +9,7 @@ import CurrentReadsList from "../readingLists/currentReadsList";
 import style from "./style.css"
 
 
-const CurrentReads = ({ allBooks, setAllBooks, isModalOpen, setIsModalOpen }) => {
+const CurrentReads = ({ allBooks, setAllBooks }) => {
 
   return (
     <>
@@ -18,8 +18,6 @@ const CurrentReads = ({ allBooks, setAllBooks, isModalOpen, setIsModalOpen }) =>
         <Navigation
           allBooks={allBooks}
           setAllBooks={setAllBooks}
-          isModalOpen={isModalOpen}
-          setIsModalOpen={setIsModalOpen}
         />
         <div>
           <h1> Current Reads:</h1>
@@ -27,8 +25,6 @@ const CurrentReads = ({ allBooks, setAllBooks, isModalOpen, setIsModalOpen }) =>
           <CurrentReadsList
             allBooks={allBooks}
             setAllBooks={setAllBooks}
-            isModalOpen={isModalOpen}
-            setIsModalOpen={setIsModalOpen}
           />
         </div>
         <Footer />

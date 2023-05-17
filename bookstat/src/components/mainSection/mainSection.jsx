@@ -1,5 +1,6 @@
 import { useState } from "react";
 // import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { useNavigate } from "react";
 import Modal from "../modal/modal.jsx";
 
@@ -35,11 +36,9 @@ const MainSection = ({
       <section className="reading-list-display">
         <div className="list-header">
           <h2>All Books</h2>
-          <button className="add-to-list" onClick={handleClick}>
-            +
-          </button>
-          {/* TODO: convert to link + Align <p>S to the right */}
-          <p className="EditLists">Edit List</p>
+          {/* TODO: Align links to the right */}
+          <Link>Edit List</Link>
+          <Link to="/AllBooks">See All</Link>
         </div>
         <ReadingList allBooks={allBooks} setAllBooks={setAllBooks} />
         {handleModalOpen()}
@@ -48,7 +47,8 @@ const MainSection = ({
       <section className="reading-list-display">
         <div className="list-header">
           <h2>Current Reads</h2>
-          <p className="EditLists">(edit)</p>
+          <Link>Edit List</Link>
+          <Link to="/CurrentReads">See All</Link>
         </div>
         <CurrentReadsList allBooks={allBooks} setAllBooks={setAllBooks} />
       </section>
@@ -56,7 +56,8 @@ const MainSection = ({
       <section className="reading-list-display">
         <div className="list-header">
           <h2>To Be Read</h2>
-          <p className="EditLists">(edit)</p>
+          <Link>Edit List</Link>
+          <Link to="/tbr">See All</Link>
         </div>
         <ToBeReadList allBooks={allBooks} setAllBooks={setAllBooks} />
       </section>
@@ -64,7 +65,8 @@ const MainSection = ({
       <section className="reading-list-display">
         <div className="list-header">
           <h2>Completed Reads</h2>
-          <p className="EditLists">(edit)</p>
+          <Link>Edit List</Link>
+          <Link to="/Read">See All</Link>
         </div>
         <CompletedReadingList allBooks={allBooks} setAllBooks={setAllBooks} />
       </section>

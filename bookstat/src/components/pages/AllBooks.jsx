@@ -2,21 +2,19 @@ import Header from "../header/header";
 import Navigation from "../navigation/navigation";
 import Footer from "../Footer/footer";
 import DeleteBookIcon from "./localdeleteBookIcon";
-// import ReadingList from "./ReadingPage";
-
-const AllBooks = ({ allBooks, setAllBooks, isModalOpen, setIsModalOpen, handleDelete}) => {
+import "./BookPage.css";
+const AllBooks = ({ allBooks, setAllBooks, handleDelete }) => {
   return (
     <>
       <div className="App">
         <Header />
         <Navigation
+          classname="PlaceLeft"
           allBooks={allBooks}
           setAllBooks={setAllBooks}
-          isModalOpen={isModalOpen}
-          setIsModalOpen={setIsModalOpen}
         />
-        <div className="App">
-          <h1> All Books:</h1>
+        <div className="grid">
+          <h2> All Books:</h2>
           <br />
           <ul>
             {allBooks.map((book, index) => {
@@ -44,7 +42,7 @@ const AllBooks = ({ allBooks, setAllBooks, isModalOpen, setIsModalOpen, handleDe
             })}
           </ul>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

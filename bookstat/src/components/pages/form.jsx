@@ -1,5 +1,11 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./form.css";
+import Header from "../header/header";
+import Navigation from "../navigation/navigation";
+import Footer from "../Footer/footer";
+
+import "../../App.css";
 
 const initialState = {
   title: "",
@@ -7,14 +13,15 @@ const initialState = {
   authorLastName: "",
   coverUrl: "",
   numPages: null,
-  publisher: "n/a",
+  publisher: "",
   yearPublished: null,
   ReadStatus: "notRead",
 };
 
 //TODO: redesign form to have a dropdown menu?
-const Form = ({ allBooks, setAllBooks, setIsModalOpen }) => {
+const Form = ({ allBooks, setAllBooks }) => {
   const [formState, setFormState] = useState(initialState);
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -35,8 +42,9 @@ const Form = ({ allBooks, setAllBooks, setIsModalOpen }) => {
     });
     const data = await res.json();
     setAllBooks([...allBooks, data]);
+    navigate("/");
 
-    setIsModalOpen(false);
+    //TODO: navigate back to Home Pages
   };
 
   const handleChange = (event) => {
@@ -58,6 +66,9 @@ const Form = ({ allBooks, setAllBooks, setIsModalOpen }) => {
     if (name === "numPages") {
       setFormState({ ...formState, numPages: value });
     }
+    if (name === "publisher") {
+          setFormState({ ...formState, publisher: value });
+        } 
     if (name === "status") {
       if (value === "notRead") {
         setFormState({ ...formState, ReadStatus: value });
@@ -72,99 +83,115 @@ const Form = ({ allBooks, setAllBooks, setIsModalOpen }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        <li>
-          <label htmlFor="bookTitle">Book Title</label>
-          <input
-            id="title"
-            name="title"
-            type="text"
-            value={formState.title}
-            required
-            onChange={handleChange}
-          />
-        </li>
+    <>
+      <div className="App">
+        <Header />
+        <Navigation />
+        {/* TODO: Gridify this */}
+        <div className="main">
+          <h2>Add a New Book:</h2>
+          <br />
+          <form onSubmit={handleSubmit}>
+            <ul>
+              <li>
+                <label htmlFor="bookTitle">Book Title</label>
+                <input
+                  id="title"
+                  name="title"
+                  type="text"
+                  value={formState.title}
+                  required
+                  onChange={handleChange}
+                />
+              </li>
 
-        <li>
-          <label htmlFor="authorFirstName">Author's First Name</label>
-          <input
-            id="authorFirstName"
-            name="authorFirstName"
-            type="text"
-            value={formState.authorFirstName}
-            required
-            onChange={handleChange}
-          />
-        </li>
+              <li>
+                <label htmlFor="authorFirstName">Author's First Name</label>
+                <input
+                  id="authorFirstName"
+                  name="authorFirstName"
+                  type="text"
+                  value={formState.authorFirstName}
+                  required
+                  onChange={handleChange}
+                />
+              </li>
 
-        <li>
-          <label htmlFor="authorLastName"> Author's Last Name</label>
-          <input
-            id="authorLastName"
-            name="authorLastName"
-            type="text"
-            value={formState.authorLastName}
-            required
-            onChange={handleChange}
-          />
-        </li>
+              <li>
+                <label htmlFor="authorLastName"> Author's Last Name</label>
+                <input
+                  id="authorLastName"
+                  name="authorLastName"
+                  type="text"
+                  value={formState.authorLastName}
+                  required
+                  onChange={handleChange}
+                />
+              </li>
 
-        <li>
-          <label htmlFor="coverUrl"> Cover Image URL</label>
-          <input
-            id="coverUrl"
-            name="coverUrl"
-            type="text"
-            value={formState.coverUrl}
-            onChange={handleChange}
-          />
-        </li>
+              <li>
+                <label htmlFor="coverUrl"> Cover Image URL</label>
+                <input
+                  id="coverUrl"
+                  name="coverUrl"
+                  type="text"
+                  value={formState.coverUrl}
+                  onChange={handleChange}
+                />
+              </li>
 
-        <li>
-          <label htmlFor="numPages"> Number of Pages</label>
-          <input
-            id="numPages"
-            name="numPages"
-            type="text"
-            value={formState.numPages}
-            required
-            onChange={handleChange}
-          />
-        </li>
+              <li>
+                <label htmlFor="numPages"> Number of Pages</label>
+                <input
+                  id="numPages"
+                  name="numPages"
+                  type="text"
+                  value={formState.numPages}
+                  required
+                  onChange={handleChange}
+                />
+              </li>
 
-        <li>
-          <label htmlFor="publisher"> Publisher</label>
-          <input
-            id="publisher"
-            name="publisher"
-            type="text"
-            value={formState.publisher}
-            onChange={handleChange}
-          />
-        </li>
+              <li>
+                <label htmlFor="publisher"> Publisher</label>
+                <input
+                  id="publisher"
+                  name="publisher"
+                  type="text"
+                  value={formState.publisher}
+                  onChange={handleChange}
+                />
+              </li>
 
-        <li>
-          <label htmlFor="yearPublished"> Publication Year</label>
-          <input
-            id="yearPublishedyearPublished"
-            name="yearPublished"
-            type="text"
-            value={formState.yearPublished}
-            onChange={handleChange}
-          />
-        </li>
+              <li>
+                <label htmlFor="yearPublished"> Publication Year</label>
+                <input
+                  id="yearPublishedyearPublished"
+                  name="yearPublished"
+                  type="text"
+                  value={formState.yearPublished}
+                  onChange={handleChange}
+                />
+              </li>
 
-        <label className="readStatus">Read status: </label>
-        <select onChange={handleChange} name="status">
-          <option value="notRead">Not Read</option>
-          <option value="tbr">To Be Read</option>
-          <option value="reading">Reading</option>
-          <option value="read">Read</option>
-        </select>
-        <input type="submit" value="Add Book" />
-      </ul>
-    </form>
+              <br />
+
+              <label className="readStatus">Read status: </label>
+              <select onChange={handleChange} name="status">
+                <option value="notRead">Not Read</option>
+                <option value="tbr">To Be Read</option>
+                <option value="reading">Reading</option>
+                <option value="read">Read</option>
+              </select>
+              <br />
+              <br />
+              <input type="submit" value="Add Book" />
+            </ul>
+          </form>
+        </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

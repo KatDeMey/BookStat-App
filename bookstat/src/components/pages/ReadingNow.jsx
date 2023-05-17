@@ -2,8 +2,10 @@ import Header from "../components/header/header";
 import Navigation from "../components/navigation/navigation";
 import Footer from "../components/Footer/footer";
 import CurrentReadsList from "../components/readingLists/currentReadsList.jsx";
+import "..pages/BookPage.css";
 
-const ReadingNow = ({ allBooks, setAllBooks, isModalOpen, setIsModalOpen }) => {
+
+const ReadingNow = ({ allBooks, setAllBooks }) => {
   return (
     <>
       <div className="App">
@@ -11,17 +13,12 @@ const ReadingNow = ({ allBooks, setAllBooks, isModalOpen, setIsModalOpen }) => {
         <Navigation
           allBooks={allBooks}
           setAllBooks={setAllBooks}
-          isModalOpen={isModalOpen}
-          setIsModalOpen={setIsModalOpen}
         />
         <div>
-          <h1> Current Reads:</h1>
-          <br />
+          <h2> Current Reads:</h2>
           <CurrentReadsList
             allBooks={allBooks}
             setAllBooks={setAllBooks}
-            isModalOpen={isModalOpen}
-            setIsModalOpen={setIsModalOpen}
           />
         </div>
         <Footer />

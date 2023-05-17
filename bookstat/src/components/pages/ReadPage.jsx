@@ -3,7 +3,7 @@ import Navigation from "../navigation/navigation";
 import Footer from "../Footer/footer";
 import CompletedReadingList from "../readingLists/completedReadsList";
 
-const ReadPage = ({ allBooks, setAllBooks, isModalOpen, setIsModalOpen }) => {
+const ReadPage = ({ allBooks, setAllBooks }) => {
   return (
     <>
       <div className="App">
@@ -11,8 +11,6 @@ const ReadPage = ({ allBooks, setAllBooks, isModalOpen, setIsModalOpen }) => {
         <Navigation
           allBooks={allBooks}
           setAllBooks={setAllBooks}
-          isModalOpen={isModalOpen}
-          setIsModalOpen={setIsModalOpen}
         />
         <div>
           <h1> Completed Reads:</h1>
@@ -20,8 +18,6 @@ const ReadPage = ({ allBooks, setAllBooks, isModalOpen, setIsModalOpen }) => {
           <CompletedReadingList
             allBooks={allBooks}
             setAllBooks={setAllBooks}
-            isModalOpen={isModalOpen}
-            setIsModalOpen={setIsModalOpen}
           />
         </div>
 
