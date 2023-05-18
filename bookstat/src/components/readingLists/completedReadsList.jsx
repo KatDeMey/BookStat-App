@@ -1,28 +1,40 @@
 import { Link } from "react-router-dom";
-
 import DeleteBookIcon from "../../assets/deleteBookIcon";
 
 import"./style.css";
 
-const CompletedReadingList = ({ allBooks, handleDelete }) => {
+const CompletedReadingList = ({ allBooks, setAllBooks }) => {
   //status === "tbr" "read" "reading"
   const filtered = allBooks.filter((book) => book.ReadStatus === "read");
-  return (
+
+  const handleDelete = async (id) => {
+    console.log("delete");
+    const res = await fetch(`http://localhost:4000/books/${id}`, {
+      method: "DELETE",
+    });
+    const data = await res.json();
+    const filteredBooks = allBooks.filter((book) => book.id !== id);
+    setAllBooks(filteredBooks);
+  };
+
+  return(
     <ul className="current-reads">
       {filtered.map((filteredByReading) => (
-          <Link to={`book/${filteredByReading.id}`}>
         <li key={filteredByReading.id} className="bookCard">
-          <img
-            className="book-card-img"
-            src={filteredByReading.coverUrl}
-            alt={filteredByReading.title}
-          />
+          <Link className="booksImgLi" to={`book/${filteredByReading.id}`}>
+            <img
+              className="book-card-img"
+              src={filteredByReading.coverUrl}
+              alt={filteredByReading.title}
+            />
+          </Link>
+
           <button
-            // TODO: connect handleDelete
+            // TODO: Props Delete
             class="overlay-delete"
             onClick={() => {
-              // handleDelete(book.id);
-              console.log(filtered);
+              handleDelete(filteredByReading.id);
+              // console.log(filtered);
             }}
           >
             <DeleteBookIcon />
@@ -33,7 +45,6 @@ const CompletedReadingList = ({ allBooks, handleDelete }) => {
             {filteredByReading.authorLastName}
           </h5>
         </li>
-        </Link>
       ))}
     </ul>
   );

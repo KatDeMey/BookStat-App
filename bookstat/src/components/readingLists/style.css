@@ -44,3 +44,9 @@ h4 {
     opacity: 1;
     cursor: pointer;
 }
+
+.booksImgLi {
+    margin-top: 10px;
+    padding: 0;
+    height: 210px ;
+}

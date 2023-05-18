@@ -1,14 +1,38 @@
 import Navigation from "../navigation/navigation";
 import Header from "../header/header";
-import { Link, useParams } from "react-router-dom";
+import DeleteBookIcon from "../../assets/deleteBookIcon";
+
+import { Link, useParams, useNavigate } from "react-router-dom";
 import "./pages.css";
 
-const BookEdit = ({ allBooks }) => {
+const BookEdit = ({ allBooks, setAllBooks }) => {
   console.log(allBooks);
   const { id } = useParams();
   console.log(typeof id);
   const filtered = allBooks.filter((book) => book.id === Number(id));
   const book = filtered[0];
+  const navigate = useNavigate();
+
+
+const handleSubmit = async (event) => {
+    event.preventDefault();
+    // TODO: submit the review
+    console.log("thanks for the review")
+}
+
+  // const handleDelete = async (id) => {
+  //   console.log("delete");
+  //   const res = await fetch(`http://localhost:4000/books/${id}`, {
+  //     method: "DELETE",
+  //   })
+  //   .then((res) => res.json())
+  //   .then((data) => allBooks, console.log("allBooks"));
+
+  //   const filteredBooks = allBooks.filter((book) => book.id !== id);
+  //   setAllBooks(filteredBooks);
+
+  //   navigate("/");
+  // };
 
   return (
     <>
@@ -44,7 +68,18 @@ const BookEdit = ({ allBooks }) => {
             <br />
             <hr />
             <br />
-            <Link to={`/book/${book.id}/edit`}><u>Edit</u></Link>
+            <Link to={`/book/${book.id}/edit`}>
+              <u>Edit</u>
+            </Link>
+            <br />
+            <br />
+            {/* <button
+              onClick={() => {
+                handleDelete(book.id);
+              }}
+            >
+              <DeleteBookIcon />
+            </button> */}
           </div>
           <div className="Right">
             <p>
@@ -55,9 +90,24 @@ const BookEdit = ({ allBooks }) => {
               {book.review ? (
                 book.review
               ) : (
-                <Link to={`/book/${book.id}/review`}>
-                  <u>Add your review</u>
-                </Link>
+                <div>
+                  {/* TODO: */}
+                  {/* <Link to={`/book/${book.id}/review`}>
+                    <u>Add your review</u>
+                  </Link> */}
+                  <br />
+
+                  <form onSubmit={handleSubmit}>
+                    <label className="smallerLabel">Add Your Review: </label>
+                    <br />
+                    <br />
+                    <textarea
+                      type="text"
+                      placeholder="Write your Review..."
+                    ></textarea>
+                    <button type="submit">Add</button>
+                  </form>
+                </div>
               )}{" "}
             </p>
           </div>

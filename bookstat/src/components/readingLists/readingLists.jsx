@@ -18,13 +18,15 @@ const ReadingList = ({ allBooks, setAllBooks }) => {
     <ul className="current-reads">
       {allBooks.map((book, index) => {
         return (
-          <Link to={`book/${book.id}`}>
+          <>
             <li key={index} className="bookCard">
-              <img
-                className="book-card-img"
-                src={book.coverUrl}
-                alt={book.title}
-              />
+              <Link className="booksImgLi" to={`book/${book.id}`}>
+                <img
+                  className="book-card-img"
+                  src={book.coverUrl}
+                  alt={book.title}
+                />{" "}
+              </Link>
               <button
                 class="overlay-delete"
                 onClick={() => {
@@ -38,7 +40,7 @@ const ReadingList = ({ allBooks, setAllBooks }) => {
                 {book.authorFirstName} {book.authorLastName}
               </h5>
             </li>
-          </Link>
+          </>
         );
       })}
     </ul>

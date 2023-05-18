@@ -43,24 +43,45 @@ function App() {
           element={<AllBooks allBooks={allBooks} setAllBooks={setAllBooks} />}
         />
         <Route
+          path="/AllBooks/book/:id"
+          element={<BookView allBooks={allBooks} />}
+        />
+        
+        {/* CurrentReads */}
+        <Route
           path={"/CurrentReads"}
           element={
             <CurrentReads allBooks={allBooks} setAllBooks={setAllBooks} />
           }
         />
         <Route
+          path="/CurrentReads/book/:id"
+          element={<BookView allBooks={allBooks} />}
+        />
+        {/* TBR */}
+        <Route
           path="/tbr"
           element={<TBRPage allBooks={allBooks} setAllBooks={setAllBooks} />}
         />
+        <Route
+          path="/tbr/book/:id"
+          element={<BookView allBooks={allBooks} />}
+        />
+
+        {/* Read */}
         <Route
           path="/Read"
           element={<ReadPage allBooks={allBooks} setAllBooks={setAllBooks} />}
         />
         <Route
+          path="/Read/book/:id"
+          element={<BookView allBooks={allBooks} />}
+        />
+
+        <Route
           path="/AddNewBook"
           element={<Form allBooks={allBooks} setAllBooks={setAllBooks} />}
         />
-        {/* TODO: */}
         <Route path="/book/:id" element={<BookView allBooks={allBooks} />} />
         <Route
           path="/book/:id/edit"

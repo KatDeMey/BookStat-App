@@ -2,6 +2,8 @@ import Header from "../header/header";
 import Navigation from "../navigation/navigation";
 import Footer from "../Footer/footer";
 import DeleteBookIcon from "./localdeleteBookIcon";
+import { Link } from "react-router-dom";
+
 import "./BookPage.css";
 const AllBooks = ({ allBooks, setAllBooks, handleDelete }) => {
   return (
@@ -20,11 +22,14 @@ const AllBooks = ({ allBooks, setAllBooks, handleDelete }) => {
             {allBooks.map((book, index) => {
               return (
                 <li key={index} className="bookCard">
-                  <img
-                    className="book-card-img"
-                    src={book.coverUrl}
-                    alt={book.title}
-                  />
+                  <Link className="booksImgLi" to={`book/${book.id}`}>
+                    <img
+                      className="book-card-img"
+                      src={book.coverUrl}
+                      alt={book.title}
+                    />
+                  </Link>
+
                   <button
                     class="overlay-delete"
                     onClick={() => {
@@ -42,7 +47,7 @@ const AllBooks = ({ allBooks, setAllBooks, handleDelete }) => {
             })}
           </ul>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );

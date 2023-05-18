@@ -25,7 +25,9 @@ const Form = ({ allBooks, setAllBooks }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const res = await fetch("http://localhost:4000/books", {
+    setAllBooks([...allBooks, formState]);
+
+    const opts = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -38,9 +40,14 @@ const Form = ({ allBooks, setAllBooks }) => {
         yearPublished: Number(formState.yearPublished),
         ReadStatus: formState.ReadStatus,
       }),
-    });
-    const data = await res.json();
-    setAllBooks([...allBooks, data]);
+    };
+    const res = await fetch("http://localhost:4000/books", opts)
+      .then((res) => res.json())
+      .then(
+        (data) => formState,
+        console.log("posted book formState:", formState)
+      );
+
     navigate("/");
 
     //TODO: navigate back to Home Pages
@@ -66,8 +73,8 @@ const Form = ({ allBooks, setAllBooks }) => {
       setFormState({ ...formState, numPages: value });
     }
     if (name === "publisher") {
-          setFormState({ ...formState, publisher: value });
-        } 
+      setFormState({ ...formState, publisher: value });
+    }
     if (name === "status") {
       if (value === "notRead") {
         setFormState({ ...formState, ReadStatus: value });

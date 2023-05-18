@@ -57,3 +57,12 @@ a {
     border: solid 1px gray;
     padding: 35px;
 }
+
+.smallerLabel {
+    font-size: smaller;
+}
+
+textarea {
+    width: 370px;
+    height: 400px
+}

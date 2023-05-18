@@ -47,6 +47,7 @@ main>ul {
 }
 
 
-/* .listHeader {
-    display: flex;
-} */
+.seeAll {
+    margin-top: 6px;
+    color:rgb(225, 215, 215);
+}
