@@ -11,6 +11,13 @@ datasource db {
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
+enum ReadStatus {
+tbr
+reading
+read
+notRead
+}
+
 model User {
   id           Int            @id @default(autoincrement())
   email        String         @unique
@@ -39,7 +46,7 @@ model Book {
   numPages        Int?
   publisher       String?
   yearPublished   Int?
-  ReadStatus      String
+  ReadStatus      String         @default("notRead")
   createdAt       DateTime       @default(now())
   updatedAt       DateTime       @updatedAt
   TagOnBook       TagOnBook[]
@@ -54,7 +61,7 @@ model Tags {
 
 model Reviews {
   id        Int      @id @default(autoincrement())
-  content   String
+  review    String
   userId    Int
   user      User     @relation(fields: [userId], references: [id])
   bookId    Int

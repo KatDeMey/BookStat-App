@@ -257,34 +257,3 @@ export default class User {
     return users
   }
 }
-
-// export async function createUser(
-//   firstName,
-//   lastName,
-//   email,
-//   bio,
-//   password
-// ) {
-//    const passwordHash = await bcrypt.hash(password, 8)
-
-//   return await dbClient.user.create({
-//     data: {
-//       firstName,
-//       lastName,
-//       email,
-//       bio,
-//       passwordHash
-//     }
-//   })
-
-//     // return new User(
-//     //   null,
-//     //   null,
-//     //   firstName,
-//     //   lastName,
-//     //   email,
-//     //   bio,
-//     //   passwordHash
-//     // )
-//   // }
-// }
