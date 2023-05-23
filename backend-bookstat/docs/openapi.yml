@@ -1,0 +1,120 @@
+openapi: 3.0.3
+info:
+  title: BookStat Server API
+  description: |-
+  version: 0.2.2
+
+servers:
+  # - url: https://team-dev-backend-api-c9.fly.dev/
+tags:
+  - name: user
+  - name: book
+  - name: review
+  - name: tags
+  - name: rating
+
+
+paths:
+  /books:
+    post:
+      tags:
+        - book
+      summary: Create Book
+      description: Create a new book
+      operationId: createBook
+      requestBody:
+         description: Book details
+         content:
+           application/json:
+             schema:
+             $ref: '#/components/schemas/newbook'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/book'
+        '400':
+          description: fail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Unable to create new book
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  
+  /books/{bookId}:
+    get:
+      tags:
+        - book
+      summary: Get a book
+      description: Get a book by it's Id
+      operationId: getBookByID
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/book'
+        '404':
+          description: Book Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  
+  schemas:
+    Error:
+      type: object
+      properties:
+        status:
+          type: string
+        data:
+          properties:
+            error:
+              type: string
+
+    book:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        authorFirstName:
+          type: string
+        authorLastName:
+          type: integer
+        coverUrl:
+          type: string
+        numPages:
+          type: integer
+        publisher:
+          type: string
+        yearPublished:
+          type: integer
+        ReadStatus:
+          type: string
+        createdAt:
+          type: string
+          format: string
+        updatedAt:
+          type: string
+          format: string
+      required:
+        - title
+
+        
