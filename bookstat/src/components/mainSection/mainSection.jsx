@@ -31,17 +31,6 @@ const MainSection = ({
 
       <section className="reading-list-display">
         <div className="list-header">
-          <h2>Current Reads</h2>
-          {/* <Link>Edit List</Link> */}
-          <Link className="seeAll" to="/CurrentReads">
-            See All
-          </Link>
-        </div>
-        <CurrentReadsList allBooks={allBooks} setAllBooks={setAllBooks} />
-      </section>
-
-      <section className="reading-list-display">
-        <div className="list-header">
           <h2>To Be Read</h2>
           {/* <Link>Edit List</Link> */}
           <Link className="seeAll" to="/tbr">
@@ -49,6 +38,17 @@ const MainSection = ({
           </Link>
         </div>
         <ToBeReadList allBooks={allBooks} setAllBooks={setAllBooks} />
+      </section>
+
+      <section className="reading-list-display">
+        <div className="list-header">
+          <h2>Current Reads</h2>
+          {/* <Link>Edit List</Link> */}
+          <Link className="seeAll" to="/CurrentReads">
+            See All
+          </Link>
+        </div>
+        <CurrentReadsList allBooks={allBooks} setAllBooks={setAllBooks} />
       </section>
 
       <section className="reading-list-display">

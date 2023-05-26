@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import DeleteBookIcon from "../../assets/deleteBookIcon";
 
-import"./style.css";
+import "./style.css";
 
 const CompletedReadingList = ({ allBooks, setAllBooks }) => {
   //status === "tbr" "read" "reading"
@@ -17,7 +17,7 @@ const CompletedReadingList = ({ allBooks, setAllBooks }) => {
     setAllBooks(filteredBooks);
   };
 
-  return(
+  return (
     <ul className="current-reads">
       {filtered.map((filteredByReading) => (
         <li key={filteredByReading.id} className="bookCard">

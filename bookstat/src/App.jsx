@@ -46,7 +46,7 @@ function App() {
           path="/AllBooks/book/:id"
           element={<BookView allBooks={allBooks} />}
         />
-        
+
         {/* CurrentReads */}
         <Route
           path={"/CurrentReads"}

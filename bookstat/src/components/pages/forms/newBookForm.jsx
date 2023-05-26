@@ -75,6 +75,9 @@ const Form = ({ allBooks, setAllBooks }) => {
     if (name === "publisher") {
       setFormState({ ...formState, publisher: value });
     }
+        if (name === "yearPublished") {
+          setFormState({ ...formState, yearPublished: value });
+        }
     if (name === "status") {
       if (value === "notRead") {
         setFormState({ ...formState, ReadStatus: value });
@@ -172,7 +175,7 @@ const Form = ({ allBooks, setAllBooks }) => {
               <li>
                 <label htmlFor="yearPublished"> Publication Year</label>
                 <input
-                  id="yearPublishedyearPublished"
+                  id="yearPublished"
                   name="yearPublished"
                   type="text"
                   value={formState.yearPublished}

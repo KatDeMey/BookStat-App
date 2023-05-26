@@ -8,17 +8,11 @@ const ReadPage = ({ allBooks, setAllBooks }) => {
     <>
       <div className="App">
         <Header />
-        <Navigation
-          allBooks={allBooks}
-          setAllBooks={setAllBooks}
-        />
+        <Navigation allBooks={allBooks} setAllBooks={setAllBooks} />
         <div>
           <h1> Completed Reads:</h1>
           <br />
-          <CompletedReadingList
-            allBooks={allBooks}
-            setAllBooks={setAllBooks}
-          />
+          <CompletedReadingList allBooks={allBooks} setAllBooks={setAllBooks} />
         </div>
 
         <Footer />

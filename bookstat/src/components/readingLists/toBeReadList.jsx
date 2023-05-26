@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import DeleteBookIcon from "../../assets/deleteBookIcon";
 
-
 import "./style.css";
 
 const ToBeReadList = ({ allBooks, setAllBooks }) => {
@@ -16,7 +15,6 @@ const ToBeReadList = ({ allBooks, setAllBooks }) => {
     const filteredBooks = allBooks.filter((book) => book.id !== id);
     setAllBooks(filteredBooks);
   };
-
 
   return (
     <ul className="current-reads">

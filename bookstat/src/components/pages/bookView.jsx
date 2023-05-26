@@ -13,13 +13,12 @@ const BookEdit = ({ allBooks, setAllBooks }) => {
   const book = filtered[0];
   const navigate = useNavigate();
 
-
-const handleSubmit = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // TODO: submit the review
-    console.log("thanks for the review")
-}
-
+    console.log("thanks for the review");
+  };
+  //TODO:
   // const handleDelete = async (id) => {
   //   console.log("delete");
   //   const res = await fetch(`http://localhost:4000/books/${id}`, {

@@ -1,31 +1,23 @@
-import { useState } from "react"
-import DeleteBookIcon from "./localdeleteBookIcon"
+import { useState } from "react";
+import DeleteBookIcon from "./localdeleteBookIcon";
 
 import Header from "../header/header";
 import Navigation from "../navigation/navigation";
 import Footer from "../Footer/footer";
 import CurrentReadsList from "../readingLists/currentReadsList";
 
-import style from "./style.css"
-
+import style from "./style.css";
 
 const CurrentReads = ({ allBooks, setAllBooks }) => {
-
   return (
     <>
       <div className="App">
         <Header />
-        <Navigation
-          allBooks={allBooks}
-          setAllBooks={setAllBooks}
-        />
+        <Navigation allBooks={allBooks} setAllBooks={setAllBooks} />
         <div>
           <h1> Current Reads:</h1>
           <br />
-          <CurrentReadsList
-            allBooks={allBooks}
-            setAllBooks={setAllBooks}
-          />
+          <CurrentReadsList allBooks={allBooks} setAllBooks={setAllBooks} />
         </div>
         <Footer />
       </div>
