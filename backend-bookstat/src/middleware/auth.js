@@ -77,14 +77,14 @@ function validateTokenType(type) {
   return true;
 }
 
-// export async function validateEditPostAuth(req, res, next) {
+// export async function validateEditBookAuth(req, res, next) {
 //   if (!req.user) {
 //     return sendMessageResponse(res, 401, "Unable to verify user");
 //   }
 
 //   try {
 //     const post = await findById(Number(req.params.id));
-//     if (req.user.id === post.user.id || req.user.role === "TEACHER") {
+//     if (req.user.id === book.user.id ) {
 //       req.post = post;
 //     } else {
 //       return sendDataResponse(res, 403, {
@@ -95,7 +95,7 @@ function validateTokenType(type) {
 //     if (e instanceof Prisma.PrismaClientKnownRequestError) {
 //       if (e.code === "P2025") {
 //         console.error(e);
-//         return sendDataResponse(res, 404, { error: "Post not found" });
+//         return sendDataResponse(res, 404, { error: "Book not found" });
 //       }
 //     }
 //   }
