@@ -19,19 +19,18 @@ const BookEdit = ({ allBooks, setAllBooks }) => {
     console.log("thanks for the review");
   };
   //TODO:
-  // const handleDelete = async (id) => {
-  //   console.log("delete");
-  //   const res = await fetch(`http://localhost:4000/books/${id}`, {
-  //     method: "DELETE",
-  //   })
-  //   .then((res) => res.json())
-  //   .then((data) => allBooks, console.log("allBooks"));
-
-  //   const filteredBooks = allBooks.filter((book) => book.id !== id);
-  //   setAllBooks(filteredBooks);
-
-  //   navigate("/");
-  // };
+  const handleDelete = async (id) => {
+    console.log("delete");
+    const res = await fetch(`http://localhost:4000/books/${id}`, {
+      method: "DELETE",
+    })
+    .then((res) => res.json())
+    .then((data) => allBooks, console.log("allBooks"))
+    .then(navigate("/"));
+    const filteredBooks = allBooks.filter((book) => book.id !== id);
+    
+    setAllBooks(filteredBooks);
+  };
 
   return (
     <>
@@ -72,13 +71,13 @@ const BookEdit = ({ allBooks, setAllBooks }) => {
             </Link>
             <br />
             <br />
-            {/* <button
+            <button
               onClick={() => {
                 handleDelete(book.id);
               }}
             >
               <DeleteBookIcon />
-            </button> */}
+            </button>
           </div>
           <div className="Right">
             <p>
