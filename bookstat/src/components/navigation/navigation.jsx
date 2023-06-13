@@ -24,14 +24,10 @@ const Navigation = ({ allBooks, setAllBooks }) => {
             <li>
               <Link to="/Read">Completed Reads</Link>
             </li>
-            <Link to="/AddNewBook">
-              <button
-                className="openModalBtn green"
-              >
-                + Add New Book
-              </button>
-            </Link>
           </ul>
+        <Link to="/AddNewBook">
+          <button className="AddBook center-row">Add Book</button>
+        </Link>
         </nav>
       </aside>
     </>

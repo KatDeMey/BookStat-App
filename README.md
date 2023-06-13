@@ -8,6 +8,8 @@ BookStat aims to do something similar, but will act more as a digital book-journ
 
 To add books to your reading list, the user will be able to add the book Title, Author Name, number of pages, a user review or thoughts on the book and more. The user will also be able to link an image of the book cover, thus allowing the user to select the cover they like best to be displayed on their profile.
 
+![ScreenShot of home Page](bookstat/src/assets/homepage.png)
+
 ## Features
 
 1. you can view a list of your books from the main page
