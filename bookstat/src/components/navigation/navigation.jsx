@@ -26,7 +26,7 @@ const Navigation = ({ allBooks, setAllBooks }) => {
             </li>
           </ul>
         <Link to="/AddNewBook">
-          <button className="AddBook center-row">Add Book</button>
+          <button className="AddBook center-row ">Add Book</button>
         </Link>
         </nav>
       </aside>

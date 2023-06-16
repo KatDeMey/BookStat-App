@@ -36,7 +36,7 @@ h2 {
 .anticipated-reads {
     display: grid;
     height: 300px;
-    grid-template-columns: repeat(5, minmax(150px, 225px));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 225px));
     gap: 15px;
     overflow: hidden;
     justify-content: space-evenly; 
