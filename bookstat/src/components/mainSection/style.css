@@ -22,7 +22,6 @@ h2 {
     border-radius: 3px;
     padding: 12px;
     margin-right: 20px;
-
 }
 
 .list-header {
@@ -37,7 +36,7 @@ h2 {
 .anticipated-reads {
     display: grid;
     height: 300px;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 225px));
+    grid-template-columns: repeat(5, minmax(150px, 225px));
     gap: 15px;
     overflow: hidden;
     justify-content: space-evenly; 
@@ -47,8 +46,8 @@ main>ul {
     height: 100vh;
     display: grid;
 
-    grid-template-rows: repeat(4, 300px);
-    row-gap: 20px;
+    grid-template-rows: repeat(auto-fill, 300px);
+    /* row-gap: 20px; */
 }
 
 

@@ -9,15 +9,15 @@ h4 {
 }
 
 .book-card-img {
-    width: 160px;
-    height: 200px;
+    width: 140px;
+    height: 180px;
     border-radius: 4px;
     margin-top: 18px;
 }
 
 .bookCard {
     border: solid pink 2px;
-
+    width: 180px;
     display: grid;
     background-color: #2a2a2a50;
     place-items: center;
@@ -48,5 +48,5 @@ h4 {
 .booksImgLi {
     margin-top: 10px;
     padding: 0;
-    height: 210px;
+    height: 190px;
 }
