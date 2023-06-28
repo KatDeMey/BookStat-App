@@ -104,6 +104,7 @@ const BookEdit = ({ allBooks, setAllBooks }) => {
                   id="title"
                   name="title"
                   type="text"
+                  placeholder={book.title}
                   value={formState.title}
                   onChange={handleChange}
                 />
@@ -115,6 +116,7 @@ const BookEdit = ({ allBooks, setAllBooks }) => {
                   id="authorFirstName"
                   name="authorFirstName"
                   type="text"
+                  placeholder={book.authorFirstName}
                   value={formState.authorFirstName}
                   onChange={handleChange}
                 />
@@ -126,6 +128,7 @@ const BookEdit = ({ allBooks, setAllBooks }) => {
                   id="authorLastName"
                   name="authorLastName"
                   type="text"
+                  placeholder={book.authorLastName}
                   value={formState.authorLastName}
                   onChange={handleChange}
                 />
@@ -137,6 +140,7 @@ const BookEdit = ({ allBooks, setAllBooks }) => {
                   id="coverUrl"
                   name="coverUrl"
                   type="text"
+                  placeholder={book.coverUrl}
                   value={formState.coverUrl}
                   onChange={handleChange}
                 />
@@ -148,6 +152,7 @@ const BookEdit = ({ allBooks, setAllBooks }) => {
                   id="numPages"
                   name="numPages"
                   type="text"
+                  placeholder={book.numPages}
                   value={formState.numPages}
                   onChange={handleChange}
                 />
@@ -159,6 +164,7 @@ const BookEdit = ({ allBooks, setAllBooks }) => {
                   id="publisher"
                   name="publisher"
                   type="text"
+                  placeholder={book.publisher}
                   value={formState.publisher}
                   onChange={handleChange}
                 />
@@ -170,6 +176,7 @@ const BookEdit = ({ allBooks, setAllBooks }) => {
                   id="yearPublishedyearPublished"
                   name="yearPublished"
                   type="text"
+                  placeholder={book.yearPublished}
                   value={formState.yearPublished}
                   onChange={handleChange}
                 />
@@ -186,7 +193,7 @@ const BookEdit = ({ allBooks, setAllBooks }) => {
               </select>
               <br />
               <br />
-              <input type="submit" value="Add Book" />
+              <input type="submit" value="Edit Book" />
             </ul>
           </form>
         </div>
