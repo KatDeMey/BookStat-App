@@ -25,7 +25,7 @@ const Navigation = ({ allBooks, setAllBooks }) => {
               <Link to="/Read">Completed Reads</Link>
             </li>
             <li>
-              <Link to="">Stats</Link>
+              <Link to="/Stats">Stats</Link>
             </li>
           </ul>
         <Link to="/AddNewBook">

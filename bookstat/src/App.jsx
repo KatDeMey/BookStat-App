@@ -9,7 +9,7 @@ import ReadPage from "./components/pages/ReadPage";
 // import Form from "./components/pages/form";
 import Form from "./components/pages/forms/newBookForm";
 import BookEdit from "./components/pages/forms/editBook";
-
+import Stats from "./components/pages/Stats";
 import BookView from "./components/pages/bookView";
 import "./App.css";
 
@@ -86,6 +86,12 @@ function App() {
         <Route
           path="/book/:id/edit"
           element={<BookEdit allBooks={allBooks} setAllBooks={setAllBooks} />}
+        />
+
+        {/* Reading Statistics */}
+        <Route
+          path="/Stats"
+          element={<Stats allBooks={allBooks} setAllBooks={setAllBooks} />}
         />
       </Routes>
     </>

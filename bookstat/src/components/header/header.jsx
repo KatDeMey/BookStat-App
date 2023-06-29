@@ -16,7 +16,7 @@ filter so that results = ?language:english
 */
 
 const Header = () => {
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState();
   const placeholderCover =
     "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg03.deviantart.net%2F323e%2Fi%2F2009%2F028%2F8%2F0%2Fclassic_red_book_cover_by_semireal_stock.jpg&f=1&nofb=1&ipt=c870a101338261a09c317afc76f9857273ebf466bb581e76ee56ab03420e13f1&ipo=images";
 
@@ -28,12 +28,17 @@ let searchedBook =
       `https://www.googleapis.com/books/v1/volumes?q=${searchedBook}=&printType=books`
     )
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setSearchResults(data.items))
+      .then(console.log("searchResults:", searchResults));
   }, []);
 
-const handleSubmit = () => {
+const handleSubmit = (e) => {
+  e.preventDefault()
+  const search = e.target.name
   // preventdefault
   console.log("Hello, world")
+  console.log(search);
+
 }
 
   /**
@@ -64,8 +69,8 @@ other info: average rating
         </Link>
 
         <form>
-          <input type="text" placeholder="Search New Books..." />
-          <button type="submit" onSubmit={handleSubmit}>Search</button>
+          <input name="search" type="text" placeholder="Search New Books..." />
+          <button type="submit" onClick={handleSubmit}>Search</button>
         </form>
       </section>
     </>

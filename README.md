@@ -34,3 +34,7 @@ You may also see any lint errors in the console.
 1. Let user add a review of their completed books
 2. Allow user to see review pages
 3. allow users to search for books from Google books's external API and add the results to their reading lists (therefore user does not have ot manually input book data)
+
+### Attribution
+
+favicon: `<a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by mikan933 - Flaticon</a>`
