@@ -38,3 +38,14 @@ You may also see any lint errors in the console.
 ### Attribution
 
 favicon: `<a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by mikan933 - Flaticon</a>`
+
+
+# Working DataFrame URL
+
+<https://whimsical.com/XcSU6FoUUS77x9cd2Wyape>
+
+## Note to self
+
+TODO: (in backend)
+allow for multiple authors
+add book description field
