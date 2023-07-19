@@ -8,7 +8,7 @@ BookStat aims to do something similar, but will act more as a digital book-journ
 
 To add books to your reading list, the user will be able to add the book Title, Author Name, number of pages, a user review or thoughts on the book and more. The user will also be able to link an image of the book cover, thus allowing the user to select the cover they like best to be displayed on their profile.
 
-![ScreenShot of home Page](bookstat/src/assets/homepage.png)
+![ScreenShot of home Page](src/assets/BookStat-home-page.png)
 
 ## Features
 
@@ -39,8 +39,7 @@ You may also see any lint errors in the console.
 
 favicon: `<a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by mikan933 - Flaticon</a>`
 
-
-# Working DataFrame URL
+## Working DataFrame URL
 
 <https://whimsical.com/XcSU6FoUUS77x9cd2Wyape>
 
