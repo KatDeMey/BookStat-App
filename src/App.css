@@ -32,10 +32,8 @@
   display: grid;
   height: 100vh;
 
-
   grid-template-columns: 240px 1fr;
   grid-template-rows: 65px, 1fr, 15px;
-  /* grid-template-columns: 100px, 1fr; */
 
   grid-template-areas:
     "header header"

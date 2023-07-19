@@ -14,11 +14,11 @@ const CurrentReads = ({ allBooks, setAllBooks }) => {
       <div className="App">
         <Header />
         <Navigation allBooks={allBooks} setAllBooks={setAllBooks} />
-        <div>
+        <main className="mainsection grid">
           <h1> Current Reads:</h1>
           <br />
           <CurrentReadsList allBooks={allBooks} setAllBooks={setAllBooks} />
-        </div>
+        </main>
         <Footer />
       </div>
     </>

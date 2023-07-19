@@ -2,10 +2,9 @@
     display: grid;
     grid-gap: 15px;
     border: solid, coral, 2px;
-    /* background-color: #3a5a40; */
 
-    grid-template-rows: repeat(4, 370px);
-   
+    grid-template-rows: 50px repeat(4, 370px);
+
     border: none;
     overflow: auto;
     padding-bottom: 30px;
@@ -15,13 +14,13 @@ h2 {
     color: #a3b18a;
 }
 
-.reading-list-display{
+.reading-list-display {
     display: grid;
     grid-template-rows: 50px 230px;
     border: 1.5px solid #3a5a40;
     border-radius: 3px;
     padding: 12px;
-    margin-right: 20px;
+    margin-right: 40px;
 }
 
 .list-header {
@@ -30,16 +29,13 @@ h2 {
     column-gap: 20px;
 }
 
-.current-reads,
-.TBR, 
-.anticipated-reads,
-.anticipated-reads {
+.reading-list-display>.current-reads {
     display: grid;
     height: 300px;
     grid-template-columns: repeat(auto-fill, minmax(150px, 225px));
     gap: 15px;
     overflow: hidden;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
 }
 
 main>ul {
@@ -47,11 +43,10 @@ main>ul {
     display: grid;
 
     grid-template-rows: repeat(auto-fill, 300px);
-    /* row-gap: 20px; */
 }
 
 
 .seeAll {
     margin-top: 6px;
-    color:rgb(225, 215, 215);
+    color: rgb(225, 215, 215);
 }

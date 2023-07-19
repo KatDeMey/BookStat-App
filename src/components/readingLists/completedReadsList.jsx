@@ -34,7 +34,6 @@ const CompletedReadingList = ({ allBooks, setAllBooks }) => {
             class="overlay-delete"
             onClick={() => {
               handleDelete(filteredByReading.id);
-              // console.log(filtered);
             }}
           >
             <DeleteBookIcon />

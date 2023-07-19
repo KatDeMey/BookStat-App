@@ -15,8 +15,8 @@ const AllBooks = ({ allBooks, setAllBooks, handleDelete }) => {
           allBooks={allBooks}
           setAllBooks={setAllBooks}
         />
-        <div className="grid">
-          <h2> All Books:</h2>
+        <main className="mainsection grid">
+          <h1> All Books:</h1>
           <br />
           <ul>
             {allBooks.map((book, index) => {
@@ -46,7 +46,7 @@ const AllBooks = ({ allBooks, setAllBooks, handleDelete }) => {
               );
             })}
           </ul>
-        </div>
+        </main>
         <Footer />
       </div>
     </>

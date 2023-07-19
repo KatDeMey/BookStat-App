@@ -1,6 +1,3 @@
-// import { useState, useEffect } from "react";
-// import { Routes, Route } from "react-router-dom";
-
 import Header from "./components/header/header.jsx";
 import Navigation from "./components/navigation/navigation.jsx";
 import MainSection from "./components/mainSection/mainSection.jsx";

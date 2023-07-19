@@ -43,6 +43,10 @@ favicon: `<a href="https://www.flaticon.com/free-icons/book" title="book icons">
 
 <https://whimsical.com/XcSU6FoUUS77x9cd2Wyape>
 
+## link to server code
+
+`https://github.com/Cloudy-96/bookstat-server`
+
 ## Note to self
 
 TODO: (in backend)

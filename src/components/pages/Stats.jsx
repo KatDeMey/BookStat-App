@@ -50,7 +50,7 @@ const Stats = (allBooks, setAllBooks) => {
       <div className="App">
         <Header />
         <Navigation allBooks={allBooks} setAllBooks={setAllBooks} />
-        <div>
+        <main main className="mainsection grid">
           <h1>Reading Stats</h1>
           <div style={{ height: "300px", width: "300px" }}>
             <h2>Total Reads Tracker</h2>
@@ -70,7 +70,7 @@ const Stats = (allBooks, setAllBooks) => {
             <h2>Num Pages</h2>
             <Doughnut data={data} />
           </div> */}
-        </div>
+        </main>
 
         <Footer />
       </div>

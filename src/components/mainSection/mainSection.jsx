@@ -7,16 +7,10 @@ import ToBeReadList from "../readingLists/toBeReadList.jsx";
 import CompletedReadingList from "../readingLists/completedReadsList.jsx";
 import "./style.css";
 
-
-const MainSection = ({
-  allBooks,
-  setAllBooks,
-  handleDelete
-}) => {
-
-
+const MainSection = ({ allBooks, setAllBooks, handleDelete }) => {
   return (
     <main className="mainSection scrollable">
+      <h1> Your Books: </h1>
       <section className="reading-list-display">
         <div className="list-header">
           <h2>All Books</h2>

@@ -1,12 +1,14 @@
 .grid {
+    margin: 0;
     /* display: grid; */
     grid-gap: 15px;
     border: solid, coral, 2px;
-    /* background-color: #3a5a40; */
-   
+
     border: none;
     overflow: auto;
     padding-bottom: 30px;
+
+    height: 80vh
 }
 
 h2 {
@@ -15,7 +17,7 @@ h2 {
     /* border-bottom: #3a5a40 8px solid; */
 }
 
-.reading-list-display{
+.reading-list-display {
     display: grid;
     grid-template-rows: 50px 230px;
 }
@@ -35,9 +37,3 @@ h2 {
     row-gap: 20px;
     justify-content: space-evenly;
 }
-
-
-/* .listHeader {
-    display: flex;
-} */
-

@@ -2,10 +2,7 @@ h4,
 .readingListP {
     color: white;
     background: none;
-}
-
-h4 {
-    color: red
+    text-align: center;
 }
 
 .book-card-img {

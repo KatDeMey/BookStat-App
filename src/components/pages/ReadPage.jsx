@@ -9,11 +9,11 @@ const ReadPage = ({ allBooks, setAllBooks }) => {
       <div className="App">
         <Header />
         <Navigation allBooks={allBooks} setAllBooks={setAllBooks} />
-        <div>
+        <main className="mainsection grid">
           <h1> Completed Reads:</h1>
           <br />
           <CompletedReadingList allBooks={allBooks} setAllBooks={setAllBooks} />
-        </div>
+        </main>
 
         <Footer />
       </div>

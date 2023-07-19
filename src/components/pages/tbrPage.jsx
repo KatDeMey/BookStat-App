@@ -10,8 +10,8 @@ const TBRPage = ({ allBooks, setAllBooks }) => {
       <div className="App">
         <Header className="header" />
         <Navigation allBooks={allBooks} setAllBooks={setAllBooks} />
-        <main>
-          <h2> To Be Read:</h2>
+        <main main className="grid">
+          <h1> To Be Read:</h1>
           <br />
           <ToBeReadList allBooks={allBooks} setAllBooks={setAllBooks} />
         </main>
