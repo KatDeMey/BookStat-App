@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import ReadingList from "../readingLists/readingLists.jsx";
@@ -10,7 +10,7 @@ import "./style.css";
 const MainSection = ({ allBooks, setAllBooks, handleDelete }) => {
   return (
     <main className="mainSection scrollable">
-      <h1> Your Books: </h1>
+      <h1 id="main-section-h1"> Your Books: </h1>
       <section className="reading-list-display">
         <div className="list-header">
           <h2>All Books</h2>

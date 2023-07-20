@@ -35,5 +35,14 @@ select {
 .main {
     border: pink 2px dashed;
     border-radius: 4px;
-    padding: 15px;
+    padding: 7em;
+    margin: auto;
+
+    height: minmax(40rem 50rem);
+    width: minmax(30rem 90rem);
+
+  /* position: absolute; */
+  justify-self: center;
+  align-self: center;
 }
+

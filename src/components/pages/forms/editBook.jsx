@@ -93,7 +93,7 @@ const BookEdit = ({ allBooks, setAllBooks }) => {
         <Header />
         <Navigation />
         {/* TODO: Gridify this */}
-        <div className="main">
+        <main className="main edit-form">
           <h2>Edit Book: {book.title}</h2>
           <br />
           <form onSubmit={handleSubmit}>
@@ -196,7 +196,7 @@ const BookEdit = ({ allBooks, setAllBooks }) => {
               <input type="submit" value="Edit Book" />
             </ul>
           </form>
-        </div>
+        </main>
         <Footer />
       </div>
     </>

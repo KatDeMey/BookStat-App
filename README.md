@@ -18,6 +18,26 @@ To add books to your reading list, the user will be able to add the book Title, 
 4. you can navigate to your reading lists, to see all books in that list
 5. you can edit your book data
 
+## Showcase
+
+<details>
+<summary> View specific reading list:</summary>
+
+![View all books - list page](View-specific-book-list.png)
+</details>
+
+<details>
+<summary> Book View:</summary>
+
+![Book View](Book-View.png)
+</details>
+
+<details>
+<summary> Edit a book:</summary>
+
+![Edit a book](Edit-book-form.png)
+</details>
+
 ## To run this app
 
 1. `npm install`
@@ -31,24 +51,14 @@ You may also see any lint errors in the console.
 
 ## Roadmap
 
-1. Let user add a review of their completed books
-2. Allow user to see review pages
-3. allow users to search for books from Google books's external API and add the results to their reading lists (therefore user does not have ot manually input book data)
+1. Let users add a review of their completed books
+2. Allow users to search for books from Google books's external API and add the results to their reading lists (therefore user does not have to manually input book data)
 
 ### Attribution
 
-favicon: `<a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by mikan933 - Flaticon</a>`
-
-## Working DataFrame URL
-
-<https://whimsical.com/XcSU6FoUUS77x9cd2Wyape>
+favicon:
+`<a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by mikan933 - Flaticon</a>`
 
 ## link to server code
 
-`https://github.com/Cloudy-96/bookstat-server`
-
-## Note to self
-
-TODO: (in backend)
-allow for multiple authors
-add book description field
+[https://github.com/Cloudy-96/bookstat-server]
