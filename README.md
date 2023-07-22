@@ -23,19 +23,19 @@ To add books to your reading list, the user will be able to add the book Title, 
 <details>
 <summary> View specific reading list:</summary>
 
-![View all books - list page](View-specific-book-list.png)
+![View all books - list page](src/assets/View-specific-book-list.png)
 </details>
 
 <details>
 <summary> Book View:</summary>
 
-![Book View](Book-View.png)
+![Book View](src/assets/Book-View.png)
 </details>
 
 <details>
 <summary> Edit a book:</summary>
 
-![Edit a book](Edit-book-form.png)
+![Edit a book](src/assets/Edit-book-form.png)
 </details>
 
 ## To run this app

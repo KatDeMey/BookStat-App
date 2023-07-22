@@ -44,7 +44,6 @@ a {
 }
 
 .pageView {
-    padding: 45px;
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 40px;

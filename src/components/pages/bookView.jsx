@@ -1,7 +1,7 @@
 import Navigation from "../navigation/navigation";
 import Header from "../header/header";
 import DeleteBookIcon from "../../assets/deleteBookIcon";
-
+import Footer from "../Footer/footer";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "./pages.css";
 
@@ -110,6 +110,7 @@ const BookEdit = ({ allBooks, setAllBooks }) => {
             </p>
           </div>
         </main>
+        <Footer />
       </div>
     </>
   );
