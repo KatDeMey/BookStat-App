@@ -4,6 +4,7 @@ import Footer from "../Footer/footer";
 
 import Chart from "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 
 const Stats = (allBooks, setAllBooks) => {
 
@@ -57,7 +58,43 @@ const Stats = (allBooks, setAllBooks) => {
     ],
   };
 
-  //might need TODO: a reduce function from allBooks.status
+// TODO: BAR CHART
+
+//labels = author name and lastname
+const labels = ["brandon Sanderson", "JK Rowling", "William Shakespear", "Umi Sakuri", "Charles Dickens"]
+
+const topAuthorsData = {
+  labels: labels,
+  datasets: [
+    {
+      label: "Your Top Authors",
+      //will need to do a filter of authors then .length (probably).
+      //TODO: unhardcode
+      data: [5, 9, 2, 8, 4],
+      backgroundColor: [
+        "rgba(255, 99, 132, 0.2)",
+        "rgba(255, 159, 64, 0.2)",
+        "rgba(255, 205, 86, 0.2)",
+        "rgba(75, 192, 192, 0.2)",
+        "rgba(54, 162, 235, 0.2)",
+        "rgba(153, 102, 255, 0.2)",
+        "rgba(201, 203, 207, 0.2)",
+      ],
+      borderColor: [
+        "rgb(255, 99, 132)",
+        "rgb(255, 159, 64)",
+        "rgb(255, 205, 86)",
+        "rgb(75, 192, 192)",
+        "rgb(54, 162, 235)",
+        "rgb(153, 102, 255)",
+        "rgb(201, 203, 207)",
+      ],
+      borderWidth: 1,
+    },
+  ],
+};
+
+
 
   return (
     <>
@@ -75,24 +112,33 @@ const Stats = (allBooks, setAllBooks) => {
             <li>notRead: {notRead.length}</li>
           </ul> */}
 
+          <br />
+          <br />
+
           <div style={{ height: "300px", width: "300px" }}>
             <h2>Total Reads Tracker</h2>
             <Doughnut data={ReadStatusData} />
           </div>
+
+          <br />
+          <br />
+          <br />
+          <br />
 
           <div style={{ height: "300px", width: "300px" }}>
             <h2>Num Pages</h2>
             <Doughnut data={NumPagesData} />
           </div>
 
-          {/* <div style={{ height: "300px", width: "300px" }}>
-            <h2>Authors</h2>
-            <Doughnut data={data} />
-          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+
           <div style={{ height: "300px", width: "300px" }}>
-            <h2>Num Pages</h2>
-            <Doughnut data={data} />
-          </div> */}
+            <h2>Authors</h2>
+            <Bar data={topAuthorsData} />
+          </div>
         </main>
 
         <Footer />
