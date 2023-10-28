@@ -4,7 +4,7 @@ import Footer from "../Footer/footer";
 import DeleteBookIcon from "./localdeleteBookIcon";
 import { Link } from "react-router-dom";
 
-import "./BookPage.css";
+// import "./BookPage.css";
 const AllBooks = ({ allBooks, setAllBooks, handleDelete }) => {
   return (
     <>
@@ -15,39 +15,47 @@ const AllBooks = ({ allBooks, setAllBooks, handleDelete }) => {
           allBooks={allBooks}
           setAllBooks={setAllBooks}
         />
-        <main className="mainsection grid">
-          <h1> All Books:</h1>
-          <br />
-          <ul>
+        <main className="mainsection h-auto flex-col space-y-2">
+          <h1 className="text-[30px]"> All Books:</h1>
+          <ul className="flex flex-wrap w-[100%] space-evenly align-center gap-5 pr-[12px]">
             {allBooks.map((book, index) => {
               return (
-                <li key={index} className="bookCard">
-                  <Link className="booksImgLi" to={`book/${book.id}`}>
-                    <img
-                      className="book-card-img"
-                      src={book.coverUrl}
-                      alt={book.title}
-                    />
-                  </Link>
+                // bookCard
+                <li
+                  key={index}
+                  className="flex-col justify-center align-center items-center border border-[pink] rounded h-[300px] bg-transparent min-w-[150px]  content-center flex-1 max-w-[300px]"
+                >
+                  <div className="bg-transparent space-y-2 flex-col justify-center align-center pt-[8%]">
+                    <Link to={`book/${book.id}`}>
+                      {/* book-card-img */}
+                      <img
+                        className="m-auto h-[200px] rounded"
+                        src={book.coverUrl}
+                        alt={book.title}
+                      />
+                    </Link>
 
-                  <button
-                    class="overlay-delete"
+                    <div className="bg-transparent text-center">
+                      <h4 className="flex justify-center items-center min-h-[48px] max-h-[50px] px-[4px]">{book.title}</h4>
+                      <h4>
+                        {book.authorFirstName} {book.authorLastName}
+                      </h4>
+                    </div>
+                  </div>
+                  {/* <button
+                    className="overlay-delete bg-transparent"
                     onClick={() => {
                       handleDelete(book.id);
                     }}
                   >
-                    <DeleteBookIcon />
-                  </button>
-                  <h4 className="readingListP">{book.title}</h4>
-                  <h5 className="readingListhP">
-                    {book.authorFirstName} {book.authorLastName}
-                  </h5>
+                    <DeleteBookIcon className="bg-transparent" />
+                  </button> */}
                 </li>
               );
             })}
           </ul>
         </main>
-        <Footer />
+        {/* <Footer className="relative bottom-0" /> */}
       </div>
     </>
   );
