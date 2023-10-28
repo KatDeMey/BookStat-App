@@ -36,20 +36,23 @@ const AllBooks = ({ allBooks, setAllBooks, handleDelete }) => {
                     </Link>
 
                     <div className="bg-transparent text-center">
-                      <h4 className="flex justify-center items-center min-h-[48px] max-h-[50px] px-[4px]">{book.title}</h4>
+                      <h4 className="flex justify-center items-center min-h-[48px] max-h-[50px] px-[4px]">
+                        {book.title}
+                      </h4>
                       <h4>
                         {book.authorFirstName} {book.authorLastName}
                       </h4>
                     </div>
                   </div>
-                  {/* <button
-                    className="overlay-delete bg-transparent"
+                  {/* overlay-delete */}
+                  <button
+                    className=" opacity-0 hover:opacity-100 flex bg-[#1e1e1e] rounded-full h-[auto] w-auto translate-y-[-640%] translate-x-[245%]"
                     onClick={() => {
                       handleDelete(book.id);
                     }}
                   >
-                    <DeleteBookIcon className="bg-transparent" />
-                  </button> */}
+                    <DeleteBookIcon className="bg-transparent h-[35px]" />
+                  </button>
                 </li>
               );
             })}
