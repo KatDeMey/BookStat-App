@@ -102,10 +102,10 @@ const Stats = (allBooks, setAllBooks) => {
       <div className="App">
         <Header />
         <Navigation allBooks={allBooks} setAllBooks={setAllBooks} />
-        <main main className="mainsection grid">
-          <div>
-            <h1>Reading Stats</h1>
+        <main main className="mainsection grid bg-[#1e1e1e] rounded-sm justify-center items-center h-[100%]">
+          <h1 className="text-[30px] bg-transparent">Reading Stats</h1>
 
+          <div className="mainsection h-auto flex-col space-y-[50px] w-[100%]">
             {/* <ul>
             <li>Total Books: {bookList.length}</li>
             <li>readBooks: {readBooks.length}</li>
@@ -113,7 +113,7 @@ const Stats = (allBooks, setAllBooks) => {
             <li>reading: {reading.length}</li>
             <li>notRead: {notRead.length}</li>
           </ul> */}
-            <div className="flex">
+            <div className="flex w-[100%] justify-between align-center items-centers space-x-9">
               <div style={{ height: "300px", width: "300px" }}>
                 <h2>Total Reads Tracker</h2>
                 <Doughnut data={ReadStatusData} />
@@ -124,9 +124,7 @@ const Stats = (allBooks, setAllBooks) => {
                 <Doughnut data={NumPagesData} />
               </div>
             </div>
-       
-
-            <div style={{ height: "300px", width: "300px" }}>
+            <div className="pt-[55px]" style={{ height: "800px", width: "100%" }}>
               <h2>Authors</h2>
               <Bar data={topAuthorsData} />
             </div>

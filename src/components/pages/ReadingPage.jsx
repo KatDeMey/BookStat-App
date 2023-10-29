@@ -14,9 +14,8 @@ const CurrentReads = ({ allBooks, setAllBooks }) => {
       <div className="App">
         <Header />
         <Navigation allBooks={allBooks} setAllBooks={setAllBooks} />
-        <main className="mainsection grid">
-          <h1> Current Reads:</h1>
-          <br />
+        <main className="mainsection h-auto flex-col space-y-2">
+          <h1  className="text-[30px]"> Current Reads:</h1>
           <CurrentReadsList allBooks={allBooks} setAllBooks={setAllBooks} />
         </main>
         <Footer />

@@ -17,35 +17,46 @@ const ToBeReadList = ({ allBooks, setAllBooks }) => {
   };
 
   return (
-    <ul className="current-reads">
-      {allBooks
-        .filter((book) => book.ReadStatus === "tbr")
-        .map((filteredByReading) => (
-          <li key={filteredByReading.id} className="bookCard">
-            <Link className="booksImgLi" to={`book/${filteredByReading.id}`}>
-              <img
-                className="book-card-img"
-                src={filteredByReading.coverUrl}
-                alt={filteredByReading.title}
-              />
-            </Link>
-            <button
-              class="overlay-delete"
-              onClick={() => {
-                handleDelete(filteredByReading.id);
-              }}
+    //current-reads
+      <ul className=" flex flex-wrap w-[100%] space-evenly align-center gap-5 pr-[12px]">
+        {allBooks
+          .filter((book) => book.ReadStatus === "tbr")
+          .map((filteredByReading) => (
+            <li
+              key={filteredByReading.id}
+              className="flex-col justify-center align-center items-center border border-[pink] rounded h-[300px] bg-transparent min-w-[150px]  content-center flex-1 max-w-[300px]"
             >
-              <DeleteBookIcon />
-            </button>
+              <div className="bg-transparent space-y-2 flex-col justify-center align-center pt-[8%]">
+                <Link to={`book/${filteredByReading.id}`}>
+                  {/* filteredByReading-card-img */}
+                  <img
+                    className="m-auto h-[200px] rounded"
+                    src={filteredByReading.coverUrl}
+                    alt={filteredByReading.title}
+                  />
+                </Link>
 
-            <h4 className="readingListP">{filteredByReading.title}</h4>
-            <h5 className="readingListhP">
-              {filteredByReading.authorFirstName}{" "}
-              {filteredByReading.authorLastName}
-            </h5>
-          </li>
-        ))}
-    </ul>
+                <div className="bg-transparent text-center">
+                  <h4 className="flex justify-center items-center min-h-[48px] max-h-[50px] px-[4px]">
+                    {filteredByReading.title}
+                  </h4>
+                  <h4>
+                    {filteredByReading.authorFirstName}{" "}
+                    {filteredByReading.authorLastName}
+                  </h4>
+                </div>
+              </div>
+              <button
+                className=" opacity-0 hover:opacity-100 flex bg-[#1e1e1e] rounded-full h-[auto] w-auto translate-y-[-640%] translate-x-[245%]"
+                onClick={() => {
+                  handleDelete(filteredByReading.id);
+                }}
+              >
+                <DeleteBookIcon className="bg-transparent h-[35px]" />
+              </button>
+            </li>
+          ))}
+      </ul>
   );
 };
 
