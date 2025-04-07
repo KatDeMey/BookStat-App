@@ -54,11 +54,11 @@ You may also see any lint errors in the console.
 1. Let users add a review of their completed books
 2. Allow users to search for books from Google books's external API and add the results to their reading lists (therefore user does not have to manually input book data)
 
+## Link to server code
+
+[https://github.com/KatDeMey/bookstat-server]
+
 ### Attribution
 
 favicon:
 `<a href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by mikan933 - Flaticon</a>`
-
-## link to server code
-
-[https://github.com/Cloudy-96/bookstat-server]
